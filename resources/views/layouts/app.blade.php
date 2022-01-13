@@ -16,7 +16,7 @@
         {{-- Footer --}}
         @include('layouts.footer')
     </main>
-
+        
     @elseif(in_array(request()->route()->getName(), ['register', 'register-example', 'login', 'login-example',
     'forgot-password', 'forgot-password-example', 'reset-password','reset-password-example']))
 
@@ -31,3 +31,4 @@
 
     @endif
 </x-layouts.base>
+
