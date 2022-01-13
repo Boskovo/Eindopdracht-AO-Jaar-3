@@ -19,10 +19,13 @@
             crossorigin="anonymous"></script>
 </head>
 <body class="antialiased">
-
-@include('layouts.includes.nav')
-
-@yield('content')
-
+      <div class="row">
+            <div class="col-1 col-lg-2">
+                  @include('layouts.includes.nav')
+            </div>
+            <div class="col-11 col-lg-10">
+                  @yield('content')
+            </div>
+      </div>
 </body>
 </html>
