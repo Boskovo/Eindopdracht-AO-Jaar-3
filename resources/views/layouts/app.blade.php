@@ -1,28 +1,33 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-layouts.base>
 
-    <title>Laravel</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    @if(in_array(request()->route()->getName(), ['dashboard', 'profile', 'profile-example', 'users', 'bootstrap-tables', 'transactions',
+    'buttons',
+    'forms', 'modals', 'notifications', 'typography', 'upgrade-to-pro']))
 
-    <!-- Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {{-- Nav --}}
+    @include('layouts.nav')
+    {{-- SideNav --}}
+    @include('layouts.sidenav')
+    <main class="content">
+        {{-- TopBar --}}
+        @include('layouts.topbar')
+        {{ $slot }}
+        {{-- Footer --}}
+        @include('layouts.footer')
+    </main>
 
-    {{--Scripots--}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-</head>
-<body class="antialiased">
+    @elseif(in_array(request()->route()->getName(), ['register', 'register-example', 'login', 'login-example',
+    'forgot-password', 'forgot-password-example', 'reset-password','reset-password-example']))
 
-@include('layouts.includes.nav')
+    {{ $slot }}
+    {{-- Footer --}}
+    @include('layouts.footer2')
 
-@yield('content')
 
-</body>
-</html>
+    @elseif(in_array(request()->route()->getName(), ['404', '500', 'lock']))
+
+    {{ $slot }}
+
+    @endif
+</x-layouts.base>
