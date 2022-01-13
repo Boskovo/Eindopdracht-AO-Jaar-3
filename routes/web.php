@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,4 @@ use App\Http\Controllers\StudentController;
 */
 Route::resource('studenten', StudentController::class);
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [Controller::class, 'index'])->name('index');
