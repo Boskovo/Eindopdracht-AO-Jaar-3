@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use \Illuminate\Http\Response;
 
-class StudentController extends Controller
+class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('student.index');
+        return view('company.index');
     }
 
     /**

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +17,7 @@ use App\Http\Controllers\Controller;
 |
 */
 Route::resource('studenten', StudentController::class);
+Route::resource('docenten', TeacherController::class);
+Route::resource('bedrijven', CompanyController::class);
 
 Route::get('/', [Controller::class, 'index'])->name('index');
