@@ -3,12 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\ShowController;
-use App\Http\Controllers\UpdateController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +26,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [ShowController::class, 'dashboard'])->name('home');
+
+Route::resource('studenten', StudentController::class);
+Route::resource('docenten', TeacherController::class);
+Route::resource('bedrijven', CompanyController::class);
 
