@@ -1,34 +1,32 @@
-<x-layouts.base>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @if(in_array(request()->route()->getName(), ['dashboard', 'profile', 'profile-example', 'users', 'bootstrap-tables', 'transactions',
-    'buttons',
-    'forms', 'modals', 'notifications', 'typography', 'upgrade-to-pro']))
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-    {{-- Nav --}}
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+</head>
+
+<body>
     @include('layouts.nav')
-    {{-- SideNav --}}
     @include('layouts.sidenav')
     <main class="content">
         {{-- TopBar --}}
         @include('layouts.topbar')
-        {{ $slot }}
+        @yield('content')
         {{-- Footer --}}
         @include('layouts.footer')
     </main>
 
-    @elseif(in_array(request()->route()->getName(), ['register', 'register-example', 'login', 'login-example',
-    'forgot-password', 'forgot-password-example', 'reset-password','reset-password-example']))
+    @yield('scripts')
+</body>
 
-    {{ $slot }}
-    {{-- Footer --}}
-    @include('layouts.footer2')
-
-
-    @elseif(in_array(request()->route()->getName(), ['404', '500', 'lock']))
-
-    {{ $slot }}
-
-    @endif
-</x-layouts.base>
-
+</html>
