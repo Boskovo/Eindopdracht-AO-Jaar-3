@@ -1,14 +1,14 @@
 <ul class="nav flex-column pt-3 pt-md-0">
     <li class="nav-item">
-        <a href="{{ route('home') }}" class="nav-link d-flex align-items-center">
+        <a href="}" class="nav-link d-flex align-items-center">
             <span class="sidebar-icon me-3">
                 <img src="{{ asset('images/brand/fine-long-light.svg') }}" height="30" width="250" alt="Volt Logo">
             </span>
         </a>
     </li>
 
-    <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
-        <a href="{{ route('home') }}" class="nav-link">
+    <li class="nav-item ">
+        <a href="" class="nav-link">
             <span class="sidebar-icon">
                 <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg">
@@ -20,8 +20,8 @@
         </a>
     </li>
 
-    <li class="nav-item {{ request()->routeIs('boetes.index') ? 'active' : '' }}">
-        <a href="{{ route('boetes.index') }}" class="nav-link">
+    <li class="nav-item">
+        <a href="" class="nav-link">
             <span class="sidebar-icon me-3">
                 <i class="fas fa-coins"></i>
             </span>
@@ -29,8 +29,8 @@
         </a>
     </li>
 
-    <li class="nav-item {{ request()->routeIs('teams.index') ? 'active' : '' }}">
-        <a href="{{ route('teams.index') }}" class="nav-link">
+    <li class="nav-item">
+        <a href="" class="nav-link">
             <span class="sidebar-icon me-3">
                 <i class="fas fa-users"></i>
             </span>
@@ -38,8 +38,10 @@
         </a>
     </li>
 
-    <li class="nav-item {{ request()->routeIs('settings.index') ? 'active' : '' }}">
-        <a href="{{ route('settings.index') }}" class="nav-link">
+{{--    {{ request()->routeIs('') ? 'active' : '' }}--}}
+
+    <li class="nav-item ">
+        <a href="" class="nav-link">
             <span class="sidebar-icon me-3">
                 <i class="fas fa-sliders-h"></i>
             </span>
@@ -61,7 +63,7 @@
     <li class="p-1 align-bottom ">
         <div class="row">
             <div class="col-md-10 align-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Profiel">
-                <a href="{{ route('profile.show') }}">
+                <a href="">
                     <div class="media d-flex align-items-center me-3">
                         <img class="avatar rounded-circle"
                              src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"
@@ -73,7 +75,7 @@
                 </a>
             </div>
             <div class="col-md-2 text-danger text-end pt-1">
-                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a href="" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                     <i class="fas fa-power-off text-end text-danger" data-bs-toggle="tooltip" data-bs-placement="top"
                        title="Uitloggen"></i>

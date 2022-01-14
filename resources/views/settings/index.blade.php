@@ -6,7 +6,7 @@
             <div class="col-12 col-xl-12">
                 <div class="card card-body border-0 shadow mb-4">
                     <h2 class="h5 mb-4">{{ __('My profile') }}</h2>
-                    <form action="{{ route('profile.update') }}" method="POST">
+                    <form action="" method="POST">
                         @csrf
                         @method('PUT')
 

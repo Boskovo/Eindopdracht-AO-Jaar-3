@@ -14,4 +14,9 @@ class ShowController extends Controller
 {
     $this->middleware('auth');
 }
+
+public function dashboard(){
+        return view('home');
+}
+
 }
