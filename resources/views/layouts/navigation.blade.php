@@ -1,6 +1,6 @@
 <ul class="nav flex-column pt-3 pt-md-0">
     <li class="nav-item">
-        <a href="}" class="nav-link d-flex align-items-center">
+        <a href="" class="nav-link d-flex align-items-center">
             <span class="sidebar-icon me-3">
                 <img src="{{ asset('images/brand/fine-long-light.svg') }}" height="30" width="250" alt="Volt Logo">
             </span>
