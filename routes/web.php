@@ -22,16 +22,13 @@ use App\Http\Livewire\ProfileExample;
 use App\Http\Livewire\RegisterExample;
 use App\Http\Livewire\Transactions;
 use Illuminate\Support\Facades\Route;
-<<<<<<< Updated upstream
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CompanyController;
-=======
 use App\Http\Livewire\ResetPasswordExample;
 use App\Http\Livewire\UpgradeToPro;
 use App\Http\Livewire\Users;
->>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
@@ -43,13 +40,11 @@ use App\Http\Livewire\Users;
 | contains the "web" middleware group. Now create something great!
 |
 */
-<<<<<<< Updated upstream
 Route::resource('studenten', StudentController::class);
 Route::resource('docenten', TeacherController::class);
 Route::resource('bedrijven', CompanyController::class);
 
 Route::get('/', [Controller::class, 'index'])->name('index');
-=======
 
 Route::redirect('/', '/login');
 
@@ -83,4 +78,3 @@ Route::middleware('auth')->group(function () {
     Route::get('/modals', Modals::class)->name('modals');
     Route::get('/typography', Typography::class)->name('typography');
 });
->>>>>>> Stashed changes
