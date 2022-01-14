@@ -18,8 +18,9 @@ use App\Http\Controllers\CompanyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () { return view('welcome');});
+Route::get('/', function(){
+    return redirect()->route('login');
+});
 
 Auth::routes();
 
