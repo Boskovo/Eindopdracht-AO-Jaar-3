@@ -25,7 +25,7 @@
             <span class="sidebar-icon me-3">
                 <i class="fas fa-coins"></i>
             </span>
-            <span class="sidebar-text">{{ __('Mijn Boetes') }}</span>
+            <span class="sidebar-text">{{ __('Mijn Profiel') }}</span>
         </a>
     </li>
 
@@ -34,7 +34,7 @@
             <span class="sidebar-icon me-3">
                 <i class="fas fa-users"></i>
             </span>
-            <span class="sidebar-text">{{ __('Mijn Teams') }}</span>
+            <span class="sidebar-text">{{ __('Stages') }}</span>
         </a>
     </li>
 
