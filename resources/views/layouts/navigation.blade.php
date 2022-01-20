@@ -49,16 +49,6 @@
         </a>
     </li>
 
-    {{--    <li class="nav-item fixed-bottom">--}}
-    {{--        <a href="{{ route('settings.index') }}" class="nav-link">--}}
-    {{--            <span class="sidebar-icon me-3">--}}
-    {{--                       <img class="card-img rounded-circle border-white w--20"--}}
-    {{--                            src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"--}}
-    {{--                            alt="{{ Auth::user()->name }}">--}}
-    {{--            </span>--}}
-    {{--            <span class="sidebar-text">{{ __('Instellingen') }}</span>--}}
-    {{--        </a>--}}
-    {{--    </li>--}}
     <hr>
     <li class="p-1 align-bottom ">
         <div class="row">
@@ -66,10 +56,10 @@
                 <a href="">
                     <div class="media d-flex align-items-center me-3">
                         <img class="avatar rounded-circle"
-                             src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"
-                             alt="{{ Auth::user()->name }}">
+                             src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->firstname }}{{ Auth::user()->lastname  }}"
+                             alt="{{ Auth::user()->firstname }}{{ Auth::user()->lastname }}">
                         <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                            <span class="mb-0 font-small fw-bold text-white">{{ auth()->user()->name }}</span>
+                            <span class="mb-0 font-small fw-bold text-white">{{ Auth::user()->firstname}} {{ Auth::user()->lastname  }}</span>
                         </div>
                     </div>
                 </a>

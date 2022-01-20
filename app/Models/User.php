@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
         'email',
         'password',
     ];
@@ -42,13 +43,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function team()
-    {
-        return $this->hasOne(Team::class, 'foreign_key');
-    }
-
-    public function member()
-    {
-        return $this->hasOne(Member::class);
-    }
 }
