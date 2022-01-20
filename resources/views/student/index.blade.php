@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="student">
-  <div class="main py-4">
+  <div class="container">
     <div class="row">
       <div class="col-large-12">
         <H1>Mijn stage</H1>
@@ -11,6 +11,7 @@
         <p>Alle documenten ingeleverd</p>
       </div>
     </div>
+
     <div class="row">
       <div class="col">
         <h2>ingeleverde documenten</h2>
@@ -25,9 +26,30 @@
         </div>
       </div>
       <div class="col">
-
+        <h2>
+          Afspraken
+        </h2>
+        <ul>
+          <li>
+            <p>Afspraaktitel</p>
+            <p>20-1-2022 / 12:00</p>
+          </li>
+          <li>
+            <p>Afspraaktitel</p>
+            <p>20-1-2022 / 12:00</p>
+          </li>
+          <li>
+            <p>Afspraaktitel</p>
+            <p>20-1-2022 / 12:00</p>
+          </li>
+          <li>
+            <p>Afspraaktitel</p>
+            <p>20-1-2022 / 12:00</p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
+
 @endsection
