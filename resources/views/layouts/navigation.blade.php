@@ -1,6 +1,6 @@
 <ul class="nav flex-column pt-3 pt-md-0">
     <li class="nav-item">
-        <a href="" class="nav-link d-flex align-items-center">
+        <a href="{{ route('home') }}" class="nav-link d-flex align-items-center">
             <span class="sidebar-icon me-3">
                 <img src="{{ asset('images/brand/fine-long-light.svg') }}" height="30" width="250" alt="Volt Logo">
             </span>
@@ -25,7 +25,7 @@
             <span class="sidebar-icon me-3">
                 <i class="fas fa-coins"></i>
             </span>
-            <span class="sidebar-text">{{ __('Mijn Profiel') }}</span>
+            <span class="sidebar-text">{{ __('Documenten') }}</span>
         </a>
     </li>
 
@@ -38,10 +38,8 @@
         </a>
     </li>
 
-{{--    {{ request()->routeIs('') ? 'active' : '' }}--}}
-
-    <li class="nav-item ">
-        <a href="" class="nav-link">
+    <li class="nav-item {{ request()->routeIs('settings') ? 'active' : '' }}">
+        <a href="{{ route('settings') }}" class="nav-link">
             <span class="sidebar-icon me-3">
                 <i class="fas fa-sliders-h"></i>
             </span>

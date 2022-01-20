@@ -5,23 +5,35 @@
         <div class="row">
             <div class="col-12 col-xl-12">
                 <div class="card card-body border-0 shadow mb-4">
-                    <h2 class="h5 mb-4">{{ __('My profile') }}</h2>
-                    <form action="{{ route('profile.update') }}" method="POST">
+                    <h2 class="h5 mb-4">{{ __('Settings:') }}</h2>
+                    <form action="{{ route('settings.update') }}" method="POST">
                         @csrf
                         @method('PUT')
 
                         <div class="row align-items-center">
                             <div class="col-md-6 mb-3">
-                                <label for="name">{{ 'Your Name' }}</label>
+                                <label for="firstname">{{ 'Your Firstname' }}</label>
                                 <div class="input-group">
                                     <span class="input-group-text">
                                         <i class="fas fa-user-alt fa-fw"></i>
                                     </span>
-                                    <input id="name" class="form-control" type="text" name="name"
-                                        placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}"
+                                    <input id="firstname" class="form-control" type="text" name="firstname"
+                                        placeholder="{{ __('Firstname') }}" value="{{ old('firstname', auth()->user()->firstname) }}"
                                         required>
                                 </div>
-                                @error('name') <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                                @error('firstname') <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastname">{{ 'Your Lastname' }}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user-alt fa-fw"></i>
+                                    </span>
+                                    <input id="lastname" class="form-control" type="text" name="lastname"
+                                           placeholder="{{ __('Lastname') }}" value="{{ old('lastname', auth()->user()->lastname) }}"
+                                           required>
+                                </div>
+                                @error('lastname') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="email">{{ __('Your Email') }}</label>

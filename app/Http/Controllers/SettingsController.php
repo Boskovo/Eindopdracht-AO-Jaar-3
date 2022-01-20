@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SettingsUpdateRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\ProfileUpdateRequest;
 
-class ProfileController extends Controller
+class SettingsController extends Controller
 {
     public function show()
     {
         return view('auth.profile');
     }
 
-    public function update(ProfileUpdateRequest $request)
+    public function update(SettingsUpdateRequest $request)
     {
 
         if ($request->password) {
@@ -25,6 +26,6 @@ class ProfileController extends Controller
             'email' => $request->email,
         ]);
 
-        return redirect()->back()->with('success', 'Profile updated.');
+        return redirect()->back()->with('success', 'Settings updated.');
     }
 }
