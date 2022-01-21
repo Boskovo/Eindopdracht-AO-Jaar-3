@@ -11,7 +11,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">{{ Auth::user()->email }}</h6>
                     </div>
                     <div class="col-md-10">
-                        
+
                     </div>
                     <div class="col-md-2">
                         <img class=" rounded-circle"
