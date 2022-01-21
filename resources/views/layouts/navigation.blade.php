@@ -7,8 +7,8 @@
         </a>
     </li>
 
-    <li class="nav-item ">
-        <a href="" class="nav-link">
+    <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
+        <a href="{{ route('home') }}" class="nav-link">
             <span class="sidebar-icon">
                 <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +51,7 @@
     <li class="p-1 align-bottom ">
         <div class="row">
             <div class="col-md-10 align-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Profiel">
-                <a href="">
+                <a href="{{ route('profile') }}">
                     <div class="media d-flex align-items-center me-3">
                         <img class="avatar rounded-circle"
                              src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->firstname }}{{ Auth::user()->lastname  }}"

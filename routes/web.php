@@ -28,6 +28,8 @@ Route::get('/home', [ShowController::class, 'dashboard'])->name('home');
 Route::get('/instellingen', [SettingsController::class, 'show'])->name('settings');
 Route::put('/instellingen/update', [SettingsController::class, 'update'])->name('settings.update');
 
+Route::get('/profiel', [ProfileController::class, 'show'])->name('profile');
+
 Route::resource('studenten', StudentController::class);
 Route::resource('docenten', TeacherController::class);
 Route::resource('bedrijven', CompanyController::class);

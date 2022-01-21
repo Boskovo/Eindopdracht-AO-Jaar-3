@@ -10,7 +10,7 @@ class SettingsController extends Controller
 {
     public function show()
     {
-        return view('auth.profile');
+        return view('auth.settings');
     }
 
     public function update(SettingsUpdateRequest $request)
