@@ -1,14 +1,14 @@
 <ul class="nav flex-column pt-3 pt-md-0">
     <li class="nav-item">
-        <a href="" class="nav-link d-flex align-items-center">
+        <a href="{{ route('home') }}" class="nav-link d-flex align-items-center">
             <span class="sidebar-icon me-3">
                 <img src="{{ asset('images/brand/fine-long-light.svg') }}" height="30" width="250" alt="Volt Logo">
             </span>
         </a>
     </li>
 
-    <li class="nav-item ">
-        <a href="" class="nav-link">
+    <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
+        <a href="{{ route('home') }}" class="nav-link">
             <span class="sidebar-icon">
                 <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +25,7 @@
             <span class="sidebar-icon me-3">
                 <i class="fas fa-coins"></i>
             </span>
-            <span class="sidebar-text">{{ __('Mijn Profiel') }}</span>
+            <span class="sidebar-text">{{ __('Documenten') }}</span>
         </a>
     </li>
 
@@ -38,10 +38,8 @@
         </a>
     </li>
 
-{{--    {{ request()->routeIs('') ? 'active' : '' }}--}}
-
-    <li class="nav-item ">
-        <a href="" class="nav-link">
+    <li class="nav-item {{ request()->routeIs('settings') ? 'active' : '' }}">
+        <a href="{{ route('settings') }}" class="nav-link">
             <span class="sidebar-icon me-3">
                 <i class="fas fa-sliders-h"></i>
             </span>
@@ -49,27 +47,17 @@
         </a>
     </li>
 
-    {{--    <li class="nav-item fixed-bottom">--}}
-    {{--        <a href="{{ route('settings.index') }}" class="nav-link">--}}
-    {{--            <span class="sidebar-icon me-3">--}}
-    {{--                       <img class="card-img rounded-circle border-white w--20"--}}
-    {{--                            src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"--}}
-    {{--                            alt="{{ Auth::user()->name }}">--}}
-    {{--            </span>--}}
-    {{--            <span class="sidebar-text">{{ __('Instellingen') }}</span>--}}
-    {{--        </a>--}}
-    {{--    </li>--}}
     <hr>
     <li class="p-1 align-bottom ">
         <div class="row">
             <div class="col-md-10 align-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Profiel">
-                <a href="">
+                <a href="{{ route('profile') }}">
                     <div class="media d-flex align-items-center me-3">
                         <img class="avatar rounded-circle"
-                             src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->name }}"
-                             alt="{{ Auth::user()->name }}">
+                             src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->firstname }}{{ Auth::user()->lastname  }}"
+                             alt="{{ Auth::user()->firstname }}{{ Auth::user()->lastname }}">
                         <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                            <span class="mb-0 font-small fw-bold text-white">{{ auth()->user()->name }}</span>
+                            <span class="mb-0 font-small fw-bold text-white">{{ Auth::user()->firstname}} {{ Auth::user()->lastname  }}</span>
                         </div>
                     </div>
                 </a>
