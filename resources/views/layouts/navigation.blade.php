@@ -57,7 +57,7 @@
     </li>
 
     <hr>
-    <li class="p-1 align-bottom ">
+    <li class="p-1 align-bottom nav-item {{ request()->routeIs('profile') ? 'active' : '' }}">
         <div class="row">
             <div class="col-md-10 align-end" data-bs-toggle="tooltip" data-bs-placement="top" title="Profiel">
                 <a href="{{ route('profile') }}">

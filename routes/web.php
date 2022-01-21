@@ -27,6 +27,7 @@ Route::get('/home', [ShowController::class, 'dashboard'])->name('home');
 
 Route::get('/instellingen', [SettingsController::class, 'show'])->name('settings');
 Route::put('/instellingen/update', [SettingsController::class, 'update'])->name('settings.update');
+Route::post('/instellingen/create/link', [SettingsController::class, 'create_link'])->name('settings.create.link');
 
 Route::get('/profiel', [ProfileController::class, 'show'])->name('profile');
 

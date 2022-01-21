@@ -1,47 +1,34 @@
 @extends('layouts.app')
-@section('title', 'Instellingen')
 
 @section('content')
     <div class="main py-4">
         <div class="row">
             <div class="col-12 col-xl-12">
                 <div class="card card-body border-0 shadow mb-4">
-                    <h2 class="h5 mb-4">{{ __('Settings:') }}</h2>
-                    <form action="{{ route('settings.update') }}" method="POST">
+                    <h2 class="h5 mb-4">{{ __('My profile') }}</h2>
+                    <form action="" method="POST">
                         @csrf
                         @method('PUT')
 
                         <div class="row align-items-center">
                             <div class="col-md-6 mb-3">
-                                <label for="firstname">{{ 'Your Firstname' }}</label>
+                                <label for="name">{{ 'Your Name' }}</label>
                                 <div class="input-group">
                                     <span class="input-group-text">
                                         <i class="fas fa-user-alt fa-fw"></i>
                                     </span>
-                                    <input id="firstname" class="form-control" type="text" name="firstname"
-                                        placeholder="{{ __('Firstname') }}" value="{{ old('firstname', auth()->user()->firstname) }}"
-                                        required>
-                                </div>
-                                @error('firstname') <div class="invalid-feedback"> {{ $message }} </div> @enderror
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="lastname">{{ 'Your Lastname' }}</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-user-alt fa-fw"></i>
-                                    </span>
-                                    <input id="lastname" class="form-control" type="text" name="lastname"
-                                           placeholder="{{ __('Lastname') }}" value="{{ old('lastname', auth()->user()->lastname) }}"
+                                    <input id="name" class="form-control" type="text" name="name"
+                                           placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}"
                                            required>
                                 </div>
-                                @error('lastname') <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                                @error('name') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="email">{{ __('Your Email') }}</label>
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1">
                                         <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
                                             </path>
@@ -50,8 +37,8 @@
                                         </svg>
                                     </span>
                                     <input type="email" name="email" class="form-control"
-                                        placeholder="{{ __('Email') }}" id="email"
-                                        value="{{ old('email', auth()->user()->email) }}" required>
+                                           placeholder="{{ __('Email') }}" id="email"
+                                           value="{{ old('email', auth()->user()->email) }}" required>
                                 </div>
                                 @error('email') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                             </div>
@@ -62,16 +49,16 @@
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon2">
                                         <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd"
-                                                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                                                clip-rule="evenodd">
+                                                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                                  clip-rule="evenodd">
                                             </path>
                                         </svg>
 
                                     </span>
                                     <input type="password" name="password" placeholder="{{ __('New Password') }}"
-                                        class="form-control" id="password">
+                                           class="form-control" id="password">
                                 </div>
                                 @error('password') <div class="invalid-feedback"> {{ $message }} </div> @enderror
                             </div>
@@ -80,17 +67,17 @@
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon3">
                                         <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                             xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd"
-                                                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                                                clip-rule="evenodd">
+                                                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                                  clip-rule="evenodd">
                                             </path>
                                         </svg>
 
                                     </span>
                                     <input type="password" name="password_confirmation" class="form-control"
-                                        id="password_confirmation" placeholder="{{ __('New password confirmation') }}"
-                                        autocomplete="new-password">
+                                           id="password_confirmation" placeholder="{{ __('New password confirmation') }}"
+                                           autocomplete="new-password">
                                 </div>
                             </div>
                         </div>
