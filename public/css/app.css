@@ -32566,6 +32566,66 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
   z-index: 9999;
 }
 
+.student {
+  background-color: transparent;
+}
+.student .student-overall {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.student .document-display {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.student .appointment-display {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.student .buttonwrapper {
+  width: 100%;
+}
+.student .buttonwrapper a {
+  color: #ffffff;
+}
+.student .buttonwrapper .pok-button {
+  display: inline-block;
+  background-color: #003581;
+  border-radius: 20px;
+  width: 200px;
+  height: 25px;
+}
+.student .buttonwrapper .document-button {
+  display: inline-block;
+  background-color: #de0000;
+  border-radius: 20px;
+  width: 200px;
+  height: 25px;
+}
+.student .appointment-display p {
+  display: inline-block;
+}
+
+.container_profiel_docent {
+  height: 400px;
+  background-color: #867575;
+  border-radius: 20px;
+}
+
+.container_informatie_stage {
+  height: 400px;
+  width: 100%;
+  background-color: #867575;
+  border-radius: 20px;
+}
+
+.container_ingeleverde_documenten {
+  height: 250px;
+  width: 102%;
+  background-color: #867575;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
 .invalid-feedback {
   display: block;
 }
@@ -32576,8 +32636,4 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
 
 .table > :not(:first-child) {
   border-top: 0;
-}
-
-.fine-card {
-  border-bottom: 2px solid #FF0076 !important;
 }
