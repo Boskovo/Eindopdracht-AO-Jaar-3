@@ -20,21 +20,30 @@
         </a>
     </li>
 
-    <li class="nav-item">
-        <a href="" class="nav-link">
+    <li class="nav-item {{ request()->routeIs('docenten.index') ? 'active' : '' }}">
+        <a href="{{ route('docenten.index') }}" class="nav-link">
             <span class="sidebar-icon me-3">
-                <i class="fas fa-coins"></i>
+               <i class="fas fa-chalkboard-teacher"></i>
             </span>
-            <span class="sidebar-text">{{ __('Documenten') }}</span>
+            <span class="sidebar-text">{{ __('Docenten') }}</span>
         </a>
     </li>
 
-    <li class="nav-item">
-        <a href="" class="nav-link">
+    <li class="nav-item {{ request()->routeIs('studenten.index') ? 'active' : '' }}">
+        <a href="{{ route('studenten.index') }}" class="nav-link">
             <span class="sidebar-icon me-3">
-                <i class="fas fa-users"></i>
+               <i class="fas fa-user-graduate"></i>
             </span>
-            <span class="sidebar-text">{{ __('Stages') }}</span>
+            <span class="sidebar-text">{{ __('Student') }}</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ request()->routeIs('bedrijven.index') ? 'active' : '' }}">
+        <a href="{{ route('bedrijven.index') }}" class="nav-link">
+            <span class="sidebar-icon me-3">
+               <i class="fas fa-building"></i>
+            </span>
+            <span class="sidebar-text">{{ __('Bedrijven') }}</span>
         </a>
     </li>
 
@@ -57,7 +66,8 @@
                              src="https://ui-avatars.com/api/?background=random&name={{ Auth::user()->firstname }}{{ Auth::user()->lastname  }}"
                              alt="{{ Auth::user()->firstname }}{{ Auth::user()->lastname }}">
                         <div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                            <span class="mb-0 font-small fw-bold text-white">{{ Auth::user()->firstname}} {{ Auth::user()->lastname  }}</span>
+                            <span
+                                class="mb-0 font-small fw-bold text-white">{{ Auth::user()->firstname}} {{ Auth::user()->lastname  }}</span>
                         </div>
                     </div>
                 </a>
