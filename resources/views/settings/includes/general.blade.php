@@ -85,22 +85,6 @@
                            autocomplete="new-password">
                 </div>
             </div>
-            <hr>
-            {{--                            @foreach(Auth::user()->link as $link)--}}
-            {{--                            <div class="col-md-6 mb-3">--}}
-            {{--                                <label for="link">{{ __('Linkjes') }}</label>--}}
-            {{--                                <div class="input-group">--}}
-            {{--                                    <span class="input-group-text" id="basic-addon1">--}}
-            {{--                                        <i class="fas fa-phone"></i>--}}
-            {{--                                    </span>--}}
-            {{--                                    <input type="text" name="link" class="form-control"--}}
-            {{--                                           placeholder="{{ __('Link') }}" id="link"--}}
-            {{--                                           value="{{ old('link->link', auth()->user()->link()->link) }}" required>--}}
-            {{--                                </div>--}}
-            {{--                                @error('link')--}}
-            {{--                                <div class="invalid-feedback"> {{ $message }} </div> @enderror--}}
-            {{--                            </div>--}}
-            {{--                            @endforeach--}}
         </div>
         <div class="mt-3">
             <button type="submit" class="btn btn-gray-800 mt-2 animate-up-2">{{ __('Submit') }}</button>

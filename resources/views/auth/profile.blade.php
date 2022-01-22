@@ -6,17 +6,18 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-11">
+                    <div class="col-md-10 mb-3">
                         <h3>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h3>
                         <h6 class="card-subtitle mb-2 text-muted">139970</h6>
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2 text-end mb-3">
                         <a href="{{ route('settings') }}">profiel bewerken</a>
                     </div>
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-12">
                                 <h5>Contactgegevens:</h5>
+                                <hr>
                             </div>
                             <div class="col-md-6">
                                 <p>
@@ -32,14 +33,15 @@
                                 <div class="row">
                                     @foreach(Auth::user()->link as $link)
                                         <div class="col-4">
-                                            <a href="{{ $link->links }}"
-                                               target="_blank">{!! $link->icon !!}  {{ $link->title }}</a><br>
+                                            <a href="//{{ $link->link }}"
+                                               target="_blank">{!! $link->title !!}</a><br>
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
                                 <h5>Adres:</h5>
+                                <hr>
                             </div>
                             @foreach(Auth::user()->address as $address)
                                 <div class="col-4">
@@ -56,8 +58,9 @@
                                 </div>
                             @endforeach
                             <br>
-                            <div class="col-md-12">
+                            <div class="col-md-12 mt-3">
                                 <h5>Overige Informatie:</h5>
+                                <hr>
                             </div>
                             <div class="col-md-12">
                                 <p>

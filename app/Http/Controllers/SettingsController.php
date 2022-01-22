@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SettingsUpdateRequest;
 use App\Models\Link;
+use App\Models\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class SettingsController extends Controller
 {
@@ -32,22 +34,39 @@ class SettingsController extends Controller
         return redirect()->back()->with('success', 'Instellingen bijgewerkt.');
     }
 
-    protected function validator(array $data)
+    protected function create_link()
     {
-        return Validator::make($data, [
-            'user_id' => ['required', 'integer', 'max:255'],
-            'title' => ['required', 'string', 'max:255'],
-            'link' => ['required', 'string', 'max:255'],
-        ]);
+        $link = new Link();
+        $link->title = request('title');
+        $link->icon = request('icon');
+        $link->link = request('link');
+        $link->user_id = Auth::id();
+
+        $link->save();
+
+        return redirect()->back()->with('success', 'Link aangemaakt.');
     }
 
-    protected function create_link(array $data)
+    public function update_link(Request $request, $id)
     {
-        return Link::create([
-            'user_id' => Auth::id(),
-            'title' => $data['title'],
-//            'icon' => $data['icon'],
-            'link' => $data['link'],
-        ]);
+
+        Link::where('id', $id)->update($request->all());
+
+        return redirect()->back()->with('success', 'Link bijgewerkt.');
+    }
+
+    protected function create_address()
+    {
+        $address = new Address();
+        $address->street = request('street');
+        $address->number = request('number');
+        $address->zipcode = request('zipcode');
+        $address->city = request('city');
+        $address->phone = request('phone');
+        $address->user_id = Auth::id();
+
+        $address->save();
+
+        return redirect()->back()->with('success', 'Adres aangemaakt.');
     }
 }

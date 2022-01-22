@@ -1,8 +1,8 @@
 <div class="card card-body border-0 shadow mb-4">
     <h2 class="h5 mb-4">{{ __('Adres Toevoegen:') }}</h2>
-    <form action="{{ route('settings.update') }}" method="POST">
+    <form action="{{ route('settings.create.address') }}" method="POST">
         @csrf
-        @method('PUT')
+        @method('POST')
 
         <div class="row align-items-center">
             <div class="col-md-6 mb-3">
