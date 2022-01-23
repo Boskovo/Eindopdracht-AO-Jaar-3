@@ -5,8 +5,8 @@
 <section class="student">
   <div class="container">
     <div class="row">
-      <div class="col-large-12">
-        <div class="student-overall">
+      <div class="col-lg-12">
+        <div class="student-overall p-3">
           <H1>Mijn stage</H1>
           <p>Bedrijfsnaam</p>
           <p>Uren Stage: 0</p>
@@ -15,9 +15,9 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-3 align-items-stretch">
       <div class="col">
-        <div class="document-display">
+        <div class="document-display p-3">
           <h2>Ingeleverde documenten</h2>
           <ul>
             <li>Documentnaam</li>
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="appointment-display">
+        <div class="appointment-display p-3">
           <h2>
             Afspraken
           </h2>

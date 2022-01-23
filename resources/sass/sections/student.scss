@@ -1,29 +1,34 @@
-.student{
+.student {
     background-color: transparent;
 
-    .student-overall{
+    .student-overall {
         background-color: #ffffff;
         border-radius: 10px;
     }
 
-    .document-display{
+    .document-display {
         background-color: #ffffff;
         border-radius: 10px;
+        height: 100%;
     }
 
-    .appointment-display{
+    .appointment-display {
         background-color: #ffffff;
         border-radius: 10px;
+        height: 100%;
     }
 
-    .buttonwrapper{
+    .buttonwrapper {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-        a{
+        a {
             color: #ffffff;
         }
 
-        .pok-button{
+        .pok-button {
             display: inline-block;
             background-color: #003581;
             border-radius: 20px;
@@ -31,7 +36,7 @@
             height: 25px;
         }
 
-        .document-button{
+        .document-button {
             display: inline-block;
             background-color: #de0000;
             border-radius: 20px;
@@ -40,8 +45,8 @@
         }
     }
 
-    .appointment-display{
-        p{
+    .appointment-display {
+        p {
             display: inline-block;
         }
     }
