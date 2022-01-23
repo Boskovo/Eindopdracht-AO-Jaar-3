@@ -1,8 +1,10 @@
 <div class="card card-body border-0 shadow mb-4">
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10">
             <h2 class="h5 mb-4">{{ __('Links bewerken:') }}</h2>
+        </div>
+        <div class="col-md-2">
             <p><a data-bs-toggle="modal" data-bs-target="#createLink" class="text-end">link toevoegen</a></p>
         </div>
     </div>
