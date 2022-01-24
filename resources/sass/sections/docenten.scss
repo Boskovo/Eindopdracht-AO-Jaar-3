@@ -41,9 +41,40 @@
     height: 400px;
     width: 100%;
     background-color: rgb(134, 117, 117);
+    overflow: inherit;
     border-radius: 20px; 
   
 }
+
+.aanvragen_goedkeuring{
+    background-color: white;
+    height: 330px;
+    width: 280px;
+    margin-top: 5%;
+    margin-left: 5%;
+    border-radius: 20px;
+ 
+}
+
+.aanvragen_goedkeuring ul {
+    padding-top: 20px;
+}
+
+
+.aanvragen_goedkeuring li {
+    list-style-type: none;
+}
+
+.progress {
+    height: 15px;
+    width: 80%;
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    left: 32px;
+    right: 32px;
+}
+
 
 
 
