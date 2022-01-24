@@ -36,6 +36,9 @@ Route::post('/instellingen/create/address', [SettingsController::class, 'create_
 Route::get('/profiel', [ProfileController::class, 'show'])->name('profile');
 
 Route::resource('studenten', StudentController::class);
+Route::get('/zoek-stage', [StudentController::class, 'search_internship'])->name('search.internship');
+Route::get('/documenten-stage', [StudentController::class, 'documents'])->name('student.documents');
+
 Route::resource('docenten', TeacherController::class);
 Route::resource('bedrijven', CompanyController::class);
 

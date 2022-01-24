@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2 class="h5 mb-4">{{ __('Addressen bewerken:') }}</h2>
+            <h2 class="h5 mb-4">{{ __('Adressen bewerken:') }}</h2>
         </div>
         <div class="col-md-2">
             <p><a data-bs-toggle="modal" data-bs-target="#createAddress" class="text-end">adres toevoegen</a></p>
@@ -36,7 +36,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="createAddressLabel">Modal title</h5>
+                <h5 class="modal-title" id="createAddressLabel">Adres toevoegen</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

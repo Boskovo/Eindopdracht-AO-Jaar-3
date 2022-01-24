@@ -17,6 +17,16 @@ class StudentController extends Controller
         return view('student.index');
     }
 
+    public function search_internship()
+    {
+    return view('student.searchinternship');
+    }
+
+    public function documents()
+    {
+        return view('student.documents');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

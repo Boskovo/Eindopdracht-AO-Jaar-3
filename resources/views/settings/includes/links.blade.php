@@ -69,7 +69,7 @@
                                     <span class="input-group-text">
                                         <i class="fas fa-link"></i>
                                     </span>
-                                <input id="link" class="form-control" type="text" name="link"
+                                <input id="link" class="form-control" type="url" name="link"
                                        placeholder="{{ __('Link-adres') }}"
                                        required>
                             </div>
