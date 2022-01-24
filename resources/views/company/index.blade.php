@@ -16,9 +16,9 @@
       <div class="card mb-6 mx-4">
         <h1 class="m-4">Vacatures</h1>
           <div class="m-4 mt-2">
-              <p>VacatureTitel</p>
-              <p>VacatureTitel</p>
-              <p>VacatureTitel</p>
+              <p>Frontend developer</p>
+              <p>Backend</p>
+              <p>Full stack developer</p>
           </div>
       </div>
     </div>
@@ -28,26 +28,26 @@
         <div class="p-3">
           <div class="row"> <!--start nieuwe row-->
             <div class="col">
-              <p>documentNaam</p>
+              <p>Opdracht.docx</p>
             </div>
             <div class="col">
-              <p>studentNaam</p>
-            </div>
-          </div>
-          <div class="row"> <!--start nieuwe row-->
-            <div class="col">
-              <p>documentNaam</p>
-            </div>
-            <div class="col">
-              <p>studentNaam</p>
+              <p>IJsbrand Holtjer</p>
             </div>
           </div>
           <div class="row"> <!--start nieuwe row-->
             <div class="col">
-              <p>documentNaam</p>
+              <p>Inlogsysteem.php</p>
             </div>
             <div class="col">
-              <p>studentNaam</p>
+              <p>Diogo van de Linde</p>
+            </div>
+          </div>
+          <div class="row"> <!--start nieuwe row-->
+            <div class="col">
+              <p>index.html</p>
+            </div>
+            <div class="col">
+              <p>Ilhan Noordhoek</p>
               </div>
             </div>
           </div>
@@ -55,9 +55,9 @@
         <div class="card mb-6 mx-4">
         <h1 class="m-4">Goed te keuren</h1>
           <div class="m-4 mt-2">
-            <p>POK student 1</p>
-            <p>POK student 2</p>
-            <p>POK student 3</p>
+            <p>POK Damianus van den Blink</p>
+            <p>POK Seán Arkema</p>
+            <p>POK Kyano Sap</p>
           </div>
         </div>
       </div>
