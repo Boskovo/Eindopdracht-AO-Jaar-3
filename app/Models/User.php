@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Address;
 use App\Models\Link;
+use App\Models\Roles;
 
 class User extends Authenticatable
 {
@@ -54,6 +55,11 @@ class User extends Authenticatable
     public function link()
     {
         return $this->hasMany(Link::class);
+    }
+
+    public function role()
+    {
+        return $this->hasOne(Role::class);
     }
 
 

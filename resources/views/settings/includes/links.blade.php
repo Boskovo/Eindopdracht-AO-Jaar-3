@@ -18,11 +18,11 @@
                             <div class="col-10">
                                 <p>
                                     {!! $link->title !!}<br>
-                                    {{ $link->link }}
+                                    <a href="{{ $link->link }}" target="_blank">{{ $link->link }}</a>
                                 </p>
                             </div>
                             <div class="col-2">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#update-{{$link->id}}" ><i class="fas fa-edit"></i></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#updateLink{{$link->id}}" ><i class="fas fa-edit"></i></a>
                                 <a href=""><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </div>
@@ -88,12 +88,12 @@
 </div>
 
 {{--Modal link bewerken--}}
-<div class="modal fade" id="update-{{$link->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby="update-{{$link->id}}Label" aria-hidden="true" role="dialog">
+<div class="modal fade" id="updateLink{{$link->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby=updateLink{{$link->id}}Label" aria-hidden="true" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="update-{{$link->id}}Label">{!! $link->title !!} bewerken</h5>
+                <h5 class="modal-title" id="updateLink{{$link->id}}Label">{!! $link->title !!} bewerken</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
