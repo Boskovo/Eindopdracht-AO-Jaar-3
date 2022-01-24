@@ -4,7 +4,7 @@
 @section('content')
 <section class="bedrijfzoeken">
     <div class="container">
-        <div class="row">
+        <div class="row text-center">
             <div class="col-lg-12">
                 <div class="searchbar p-3">
                     <div class="Namesearch">
@@ -23,14 +23,16 @@
         <div class="row mt-3">
             <div class="col">
                 <div class="internship-preview p-3">
-                    <h2>software developer</h2>
-                    <p>Groningen</p>
-                    <p>Bol</p>
-                    <p>MBO niv 4</p>
-                    <div class="companybutton">
-                        <a href="">bekijk stage</a>
+                    <div class="intership-short">
+                        <h2>software developer</h2>
+                        <p>Groningen</p>
+                        <p>Bol</p>
+                        <p>MBO niv 4</p>
+                        <div class="companybutton">
+                            <a href="">bekijk stage</a>
+                        </div>
                     </div>
-                    <div class="company-description">
+                    <div class="company-description p-1">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nibh finibus, rutrum risus id, ultrices mauris. Suspendisse rutrum, enim ultricies ullamcorper viverra, quam nisl dictum metus, eu condimentum odio ex interdum ligula. Phasellus mollis libero at purus finibus, id accumsan nisl ultricies. Aenean elementum ex id condimentum mollis.
                         </p>
