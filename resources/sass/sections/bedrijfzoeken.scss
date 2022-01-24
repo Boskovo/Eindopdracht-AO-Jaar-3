@@ -1,0 +1,36 @@
+.searchbar {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+        .search {
+            background: gray;
+            opacity: 0.5;
+            border-radius: 20px;
+            border: none;
+            color: white;
+            width: 100%;
+        }
+    
+}
+
+.internship-preview {
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .company-description {
+        background-color: #de0000;
+        border-radius: 10px;
+        color: #ffffff;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
