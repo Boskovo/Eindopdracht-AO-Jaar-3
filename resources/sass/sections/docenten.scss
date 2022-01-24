@@ -3,9 +3,35 @@
     height: 400px;
     background-color: rgb(134, 117, 117);
     border-radius: 20px; 
+    display: block;
+    overflow: auto ;
+   
+}
+
+
+.profiel_foto{
+    background-color: #ffffff;
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    
+
 
 }
 
+.info_persoon{
+    border-top: 1px solid ;
+    margin: 11%;
+}
+
+
+.cv_block{
+    text-align-last: center;
+}
 
 
 //de container rechts boven
