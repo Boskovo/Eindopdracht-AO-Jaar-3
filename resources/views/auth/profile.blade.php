@@ -65,6 +65,7 @@
                             <div class="col-md-12">
                                 <p>
                                     <b>Klas:</b> <a href="">als gebruiker student dan show dit en geef klas weer</a><br>
+                                    <b>Soort account:</b> {{ Auth::user()->role->title }}<br>
                                 </p>
                             </div>
                         </div>

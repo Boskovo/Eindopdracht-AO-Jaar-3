@@ -32576,13 +32576,18 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
 .student .document-display {
   background-color: #ffffff;
   border-radius: 10px;
+  height: 100%;
 }
 .student .appointment-display {
   background-color: #ffffff;
   border-radius: 10px;
+  height: 100%;
 }
 .student .buttonwrapper {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .student .buttonwrapper a {
   color: #ffffff;
@@ -32609,12 +32614,81 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
   height: 400px;
   background-color: #867575;
   border-radius: 20px;
+  display: block;
+  overflow: auto;
+}
+
+.profiel_foto {
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+}
+
+.info_persoon {
+  border-top: 1px solid;
+  margin: 11%;
+}
+
+.cv_block {
+  -moz-text-align-last: center;
+       text-align-last: center;
 }
 
 .container_informatie_stage {
   height: 400px;
   width: 100%;
   background-color: #867575;
+  overflow: inherit;
+  border-radius: 20px;
+}
+
+.aanvragen_goedkeuring {
+  background-color: white;
+  height: 330px;
+  width: 280px;
+  margin-top: 5%;
+  margin-left: 5%;
+  border-radius: 20px;
+  position: relative;
+}
+.aanvragen_goedkeuring ul {
+  padding-top: 20px;
+}
+.aanvragen_goedkeuring li {
+  list-style-type: none;
+}
+
+.progress {
+  height: 15px;
+  width: 80%;
+  display: block;
+  position: absolute;
+  bottom: 80px;
+  left: 32px;
+  right: 32px;
+}
+.progress p {
+  position: fixed;
+  display: block;
+  margin-top: -25px;
+}
+
+.button_Sollicitatie {
+  display: block;
+  position: absolute;
+  bottom: 25px;
+  left: 30%;
+}
+
+.huidig-bedrijf {
+  width: 20%;
+  height: 100px;
+  background-color: #ffff;
   border-radius: 20px;
 }
 
@@ -32624,6 +32698,39 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
   background-color: #867575;
   margin-top: 20px;
   border-radius: 20px;
+}
+
+.searchbar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.searchbar .search {
+  background: gray;
+  opacity: 0.5;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  width: 100%;
+}
+
+.internship-preview {
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.internship-preview .company-description {
+  background-color: #de0000;
+  border-radius: 10px;
+  color: #ffffff;
+}
+.internship-preview .company-description p {
+  margin-bottom: 0;
 }
 
 .invalid-feedback {

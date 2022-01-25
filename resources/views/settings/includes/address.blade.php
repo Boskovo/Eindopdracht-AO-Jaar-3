@@ -4,8 +4,8 @@
         <div class="col-md-10">
             <h2 class="h5 mb-4">{{ __('Adressen bewerken:') }}</h2>
         </div>
-        <div class="col-md-2">
-            <p><a data-bs-toggle="modal" data-bs-target="#createAddress" class="text-end">adres toevoegen</a></p>
+        <div class="col-md-2 text-end">
+            <p><a data-bs-toggle="modal" data-bs-target="#createAddress">adres toevoegen</a></p>
         </div>
     </div>
 
