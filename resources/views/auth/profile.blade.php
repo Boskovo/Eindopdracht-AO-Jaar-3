@@ -79,10 +79,49 @@
                 </div>
             </div>
         </div>
-        <div class="card">
+        <!--Vacaturescard-->
+        <div class="card"> 
             <div class="card-body">
-                <p>Hierin komt de bedrijfs dinges </p>
+                <div class="row">
+                    <div class="">
+                        <div class="col-md-10 mb-3">
+                            <h3>Vacatures</h3>
+                            <hr>
+                        </div>
+                        <div class="container mx-3 my-3 stage">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="pt-3 px-3">
+                                        <h3>Frontend developer</h3>
+                                    </div>
+                                    <div class="col">
+                                        <ul>
+                                            <li>{Opleiding}</li>
+                                            <li>{BOL/BBL}</li>
+                                            <li>{MBO-Niveau}</li>
+                                        </ul>
+                                        <div class="btnwrap mx-5 mb-3">
+                                            <div class="vacaturebutton text-center mb-2">
+                                                <a href="">Bekijk Vacature</a>
+                                            </div>
+                                        </div>
+                                        <!--<div class="vr"></div>-->
+                                    </div>
+                                </div>
+                                <div class="col-xl">
+                                    <div class="container my-3 w-100 h-75 stagebeschrijving">
+                                        <div class="p-3">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. 
+                                                Egestas quis ipsum suspendisse ultrices gravida dictum.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 @endsection
