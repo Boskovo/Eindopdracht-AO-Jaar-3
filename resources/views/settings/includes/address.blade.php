@@ -2,7 +2,11 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2 class="h5 mb-4">{{ __('Adressen bewerken:') }}</h2>
+            @if(Auth::user()->address->count() == 1)
+                <h2 class="h5 mb-4">{{ __('Adres bewerken:') }}</h2>
+            @else
+                <h2 class="h5 mb-4">{{ __('Adressen bewerken:') }}</h2>
+            @endif
         </div>
         <div class="col-md-2 text-end">
             <p><a data-bs-toggle="modal" data-bs-target="#createAddress">adres toevoegen</a></p>
@@ -103,22 +107,6 @@
                         <button type="submit" class="btn btn-gray-800 mt-2 animate-up-2">{{ __('Submit') }}</button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-{{--Update modal--}}
-<div class="modal fade" id="updateAddress{{$address->id}}" data-bs-backdrop="static" data-bs-keyboard="false"
-     tabindex="-1" aria-labelledby="updateAddress{{$address->id}}Label" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="updateAddress{{$address->id}}Label">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
             </div>
         </div>
     </div>

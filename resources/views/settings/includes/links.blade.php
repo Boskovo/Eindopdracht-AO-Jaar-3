@@ -2,7 +2,11 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2 class="h5 mb-4">{{ __('Links bewerken:') }}</h2>
+            @if(Auth::user()->link->count() == 1)
+                <h2 class="h5 mb-4">{{ __('Link bewerken:') }}</h2>
+            @else
+                <h2 class="h5 mb-4">{{ __('Links bewerken:') }}</h2>
+            @endif
         </div>
         <div class="col-md-2 text-end">
             <p><a data-bs-toggle="modal" data-bs-target="#createLink">link toevoegen</a></p>
@@ -22,7 +26,8 @@
                                 </p>
                             </div>
                             <div class="col-2">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#updateLink{{$link->id}}" ><i class="fas fa-edit"></i></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#updateLink{{$link->id}}"><i
+                                        class="fas fa-edit"></i></a>
                                 <a href=""><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </div>
@@ -80,46 +85,6 @@
                             <button type="submit"
                                     class="btn btn-gray-800 mt-2 animate-up-2 align-content-end">{{ __('Submit') }}</button>
                         </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-{{--Modal link bewerken--}}
-<div class="modal fade" id="updateLink{{$link->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-     aria-labelledby=updateLink{{$link->id}}Label" aria-hidden="true" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="updateLink{{$link->id}}Label">{!! $link->title !!} bewerken</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="{{ route('settings.update.link', ['id' => $link->id]) }}" method="POST">
-                @csrf
-                @method('PUT')
-                    <input type="hidden" name="id" value="{{$link->id}}">
-                    <div class="row align-items-center">
-                        <div class="col-md-12 mb-3">
-                            <label for="link">{{ 'Webadres' }}</label>
-                            <div class="input-group">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-link"></i>
-                                    </span>
-                                <input id="link" class="form-control" type="text" name="link"
-                                       placeholder="{{ __('Link') }}"
-                                       value="{{ old('link', $link->link) }}"
-                                       required>
-                            </div>
-                            @error('link')
-                            <div class="invalid-feedback"> {{ $message }} </div> @enderror
-                        </div>
-                        <div class="mt-3">
-                            <button type="submit" class="btn btn-gray-800 mt-2 animate-up-2">{{ __('Submit') }}</button>
-                        </div>
-
                     </div>
                 </form>
             </div>
