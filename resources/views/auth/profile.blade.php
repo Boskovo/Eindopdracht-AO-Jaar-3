@@ -73,5 +73,10 @@
                 </div>
             </div>
         </div>
+        <div class="card">
+            <div class="card-body">
+                <p>Hierin komt de bedrijfs dinges </p>
+            </div>
+        </div>
     </div>
 @endsection
