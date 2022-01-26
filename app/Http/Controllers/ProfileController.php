@@ -14,6 +14,8 @@ class ProfileController extends Controller
 
     public function show()
     {
+        abort_if(auth()->user()->hasRole('admin'), 401);
+
         return view('auth.profile');
     }
 }

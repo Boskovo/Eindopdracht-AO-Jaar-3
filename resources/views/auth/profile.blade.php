@@ -65,7 +65,7 @@
                             <div class="col-md-12">
                                 <p>
                                     <b>Klas:</b> <a href="">als gebruiker student dan show dit en geef klas weer</a><br>
-                                    <b>Soort account:</b> {{ Auth::user()->role->title }}<br>
+                                    <b>Soort account:</b> {{ auth()->user()->roles->first()->name  }}<br>
                                 </p>
                             </div>
                         </div>
