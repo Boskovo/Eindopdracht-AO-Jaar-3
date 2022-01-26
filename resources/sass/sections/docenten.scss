@@ -50,61 +50,13 @@
     background-color: white;
     height: 330px;
     width: 280px;
-    margin-top: 5%;
-    margin-left: 5%;
-    border-radius: 20px;
-    position: relative;
+    border-radius: 5%;
 
     ul {
-        padding-top: 20px;
+        list-style-type: none;
     }
- 
-    
-    li {
-    list-style-type: none;
-}
-}
-
-
-
-
-.progress {
-    height: 15px;
-    width: 80%;
-    display: block;
-    position: absolute;
-    bottom: 80px;
-    left: 32px;
-    right: 32px;
-
-    p{
-        position: fixed;
-        display: block;
-        margin-top: -25px;
-    }
-}
-
-.button_Sollicitatie{
-    display: block;
-    position: absolute;
-    bottom: 25px;
-    left: 30%;
-}
-
-
-
-
-.huidig-bedrijf{
-    width: 20%;
-    height: 100px;
-    background-color: #ffff;
-    border-radius: 20px;
-
 
 }
-
-
-
 
 
 
@@ -116,7 +68,7 @@
 
 .container_ingeleverde_documenten {
     height: 250px;
-    width: 102%;
+    width: 100%;
     background-color: rgb(134, 117, 117);
     margin-top: 20px;
     border-radius: 20px; 
