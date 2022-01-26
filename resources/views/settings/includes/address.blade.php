@@ -2,7 +2,11 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2 class="h5 mb-4">{{ __('Adressen bewerken:') }}</h2>
+            @if(Auth::user()->address->count() == 1)
+                <h2 class="h5 mb-4">{{ __('Adres bewerken:') }}</h2>
+            @else
+                <h2 class="h5 mb-4">{{ __('Adressen bewerken:') }}</h2>
+            @endif
         </div>
         <div class="col-md-2 text-end">
             <p><a data-bs-toggle="modal" data-bs-target="#createAddress">adres toevoegen</a></p>

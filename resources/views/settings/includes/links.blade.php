@@ -2,7 +2,11 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2 class="h5 mb-4">{{ __('Links bewerken:') }}</h2>
+            @if(Auth::user()->link->count() == 1)
+                <h2 class="h5 mb-4">{{ __('Link bewerken:') }}</h2>
+            @else
+                <h2 class="h5 mb-4">{{ __('Links bewerken:') }}</h2>
+            @endif
         </div>
         <div class="col-md-2 text-end">
             <p><a data-bs-toggle="modal" data-bs-target="#createLink">link toevoegen</a></p>
@@ -22,7 +26,8 @@
                                 </p>
                             </div>
                             <div class="col-2">
-                                <a href="" data-bs-toggle="modal" data-bs-target="#updateLink{{$link->id}}" ><i class="fas fa-edit"></i></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#updateLink{{$link->id}}"><i
+                                        class="fas fa-edit"></i></a>
                                 <a href=""><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </div>

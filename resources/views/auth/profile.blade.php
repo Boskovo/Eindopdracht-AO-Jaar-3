@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="main py-4">
-        <div class="card">
+        <div class="card mb-4">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-10 mb-3">
@@ -40,7 +40,11 @@
                                 </div>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <h5>Adres:</h5>
+                                @if(Auth::user()->address->count() == 1)
+                                    <h5>Adres:</h5>
+                                @else
+                                    <h5>Adressen:</h5>
+                                @endif
                                 <hr>
                             </div>
                             @foreach(Auth::user()->address as $address)
@@ -65,7 +69,9 @@
                             <div class="col-md-12">
                                 <p>
                                     <b>Klas:</b> <a href="">als gebruiker student dan show dit en geef klas weer</a><br>
-                                    <b>Soort account:</b> {{ auth()->user()->roles->first()->name  }}<br>
+                                    @if(auth()->user()->hasRole('admin'))
+                                        <b>Soort account:</b> {{ auth()->user()->roles->first()->name  }}<br>
+                                    @endif
                                 </p>
                             </div>
                         </div>
