@@ -28,7 +28,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('teacher.student-classes');
+
     }
 
     /**
@@ -50,7 +50,7 @@ class TeacherController extends Controller
      */
     public function show()
     {
-        return view('teacher.documentverify');
+
     }
 
     /**
@@ -85,5 +85,15 @@ class TeacherController extends Controller
     public function destroy(Teacher $teacher)
     {
         //
+    }
+
+    public function document_verify()
+    {
+        return view('teacher.documentverify');
+    }
+
+    public function classes()
+    {
+        return view('teacher.student-classes');
     }
 }
