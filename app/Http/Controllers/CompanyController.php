@@ -86,4 +86,9 @@ class CompanyController extends Controller
     {
         //
     }
+
+    public function vacancies()
+    {
+        return view('company.vacancies.index');
+    }
 }

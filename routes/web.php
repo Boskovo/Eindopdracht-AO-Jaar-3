@@ -47,6 +47,8 @@ Route::resource('docenten', TeacherController::class);
 Route::get('/docenten/documenten/goedkeuren', [TeacherController::class, 'show'])->name('teacher.verify');
 Route::get('/docenten/klassen', [TeacherController::class, 'create'])->name('teacher.classes');
 
+Route::get('/vacatures', [TeacherController::class, 'vacancies'])->name('company.vacancies');
+
 Route::resource('bedrijven', CompanyController::class);
 
 Route::group(['middleware' => ['auth']], function() {
