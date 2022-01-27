@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,4 +57,5 @@ Route::get('/vacature-aanmaken', [CompanyController::class, 'create_vacancy'])->
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
+    Route::resource('roles', RoleController::class);
 });

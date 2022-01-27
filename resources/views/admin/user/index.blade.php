@@ -36,7 +36,6 @@
                             <tr>
                                 <th scope="row">{{ $user->id }}</th>
                                 <td>{{ $user->firstname }} {{ $user->lastname }}</td>
-                                <td>{{ $user->email }}</td>
                                 <td>
                                     @if(!empty($user->getRoleNames()))
                                         @foreach($user->getRoleNames() as $v)
@@ -45,10 +44,12 @@
                                         @endforeach
                                     @endif
                                 </td>
+                                <td>{{ $user->email }}</td>
                                 <td>
-                                    <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-                                    <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-                                    <a class="btn btn-success" href="{{ route('users.destroy',$user->id) }}"> Delete</a>
+{{--                                    <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>--}}
+                                    <a class="text-primary font-medium" href="{{ route('users.edit',$user->id) }}"><i class="fas fa-eye"></i></a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a class="text-danger font-medium" href="{{ route('users.destroy',$user->id) }}"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach

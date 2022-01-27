@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
 {
@@ -16,8 +17,9 @@ class AdminController extends Controller
     public function index()
     {
         $users = User::all();
+        $roles = Role::all();
 
-        return view('admin.index', compact('users'));
+        return view('admin.index', compact('users', 'roles'));
     }
 
     /**
