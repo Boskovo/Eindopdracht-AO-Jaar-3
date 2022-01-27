@@ -32651,50 +32651,15 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
   background-color: white;
   height: 330px;
   width: 280px;
-  margin-top: 5%;
-  margin-left: 5%;
-  border-radius: 20px;
-  position: relative;
+  border-radius: 5%;
 }
 .aanvragen_goedkeuring ul {
-  padding-top: 20px;
-}
-.aanvragen_goedkeuring li {
   list-style-type: none;
-}
-
-.progress {
-  height: 15px;
-  width: 80%;
-  display: block;
-  position: absolute;
-  bottom: 80px;
-  left: 32px;
-  right: 32px;
-}
-.progress p {
-  position: fixed;
-  display: block;
-  margin-top: -25px;
-}
-
-.button_Sollicitatie {
-  display: block;
-  position: absolute;
-  bottom: 25px;
-  left: 30%;
-}
-
-.huidig-bedrijf {
-  width: 20%;
-  height: 100px;
-  background-color: #ffff;
-  border-radius: 20px;
 }
 
 .container_ingeleverde_documenten {
   height: 250px;
-  width: 102%;
+  width: 100%;
   background-color: #867575;
   margin-top: 20px;
   border-radius: 20px;
@@ -32746,6 +32711,75 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
 }
 .internship-preview .companybutton a {
   color: #ffffff;
+}
+
+.documentdrop {
+  background-color: #ffffff;
+}
+
+#drop_zone {
+  border: 1px solid black;
+  width: 80%;
+  height: 400px;
+  margin: auto;
+  display: flex;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button-wrapper .file-upload {
+  background-color: #de0000;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  width: 33%;
+  height: 55px;
+}
+.button-wrapper .submit-file {
+  background-color: #003581;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  width: 33%;
+  height: 55px;
+}
+
+.stage {
+  background-color: lightgray;
+}
+
+.vl {
+  border-right: 2px solid black;
+  height: 200px;
+}
+
+.vacaturebutton {
+  display: inline-block;
+  background-color: #de0000;
+  border-radius: 20px;
+  width: 175px;
+  height: 35px;
+}
+
+.btnwrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btnwrap a {
+  color: #ffffff;
+  margin-left: 27px;
+  margin-top: 10px;
+}
+
+.stagebeschrijving {
+  background-color: white;
+  border-color: black;
+  border-width: 5px;
 }
 
 .invalid-feedback {

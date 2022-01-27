@@ -24,11 +24,11 @@ class TeacherController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('teacher.student-classes');
     }
 
     /**
@@ -46,11 +46,11 @@ class TeacherController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Teacher  $teacher
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function show(Teacher $teacher)
+    public function show()
     {
-        //
+        return view('teacher.documentverify');
     }
 
     /**

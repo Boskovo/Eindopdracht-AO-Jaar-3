@@ -8,6 +8,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,11 @@ Route::resource('studenten', StudentController::class);
 Route::get('/zoek-stage', [StudentController::class, 'search_internship'])->name('search.internship');
 Route::get('/documenten-stage', [StudentController::class, 'documents'])->name('student.documents');
 
+Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('admin');
+
 Route::resource('docenten', TeacherController::class);
+Route::get('/docenten/documenten/goedkeuren', [TeacherController::class, 'show'])->name('teacher.verify');
+Route::get('/docenten/klassen', [TeacherController::class, 'create'])->name('teacher.classes');
+
 Route::resource('bedrijven', CompanyController::class);
 
