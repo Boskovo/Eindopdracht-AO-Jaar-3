@@ -25,7 +25,7 @@
     <div class="col">
       <div class="card mb-6 mx-4">
         <h1 class="m-4">Documenten</h1>
-        <div class="p-3">
+        <div class="mx-4 my-3">
           <div class="row"> <!--start nieuwe row-->
             <div class="col">
               <p>Opdracht.docx</p>

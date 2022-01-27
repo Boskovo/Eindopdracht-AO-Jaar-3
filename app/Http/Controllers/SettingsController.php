@@ -43,7 +43,6 @@ class SettingsController extends Controller
     {
         $link = new Link();
         $link->title = request('title');
-        $link->icon = request('icon');
         $link->link = request('link');
         $link->user_id = Auth::id();
 
@@ -67,7 +66,7 @@ class SettingsController extends Controller
         $address->number = request('number');
         $address->zipcode = request('zipcode');
         $address->city = request('city');
-        $address->phone = request('phone');
+//        $address->phone = request('phone');
         $address->user_id = Auth::id();
 
         $address->save();

@@ -1,0 +1,36 @@
+.documentdrop {
+    background-color: #ffffff;
+}
+
+#drop_zone {
+    border: 1px solid black;
+    width: 80%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+}
+
+.button-wrapper {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .file-upload {
+        background-color: #de0000;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        width: 33%;
+        height: 55px;
+    }
+
+    .submit-file {
+        background-color: #003581;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        width: 33%;
+        height: 55px;
+    }
+}

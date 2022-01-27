@@ -1,0 +1,32 @@
+.stage {
+    background-color: lightgray;
+}
+.vl {
+    border-right: 2px solid rgb(0, 0, 0);
+    height: 200px;
+  }
+  .vacaturebutton {
+    display: inline-block;
+    background-color: #de0000;
+    border-radius: 20px;
+    width: 175px;
+    height: 35px;
+    
+  }
+  .btnwrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: #ffffff;
+        margin-left: 27px;
+        margin-top: 10px;
+    }
+  }
+  .stagebeschrijving {
+      background-color: white;
+      border-color: black;
+      border-width: 5px;
+  }
