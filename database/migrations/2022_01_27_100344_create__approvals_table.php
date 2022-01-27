@@ -15,9 +15,9 @@ class CreateApprovalsTable extends Migration
     {
         Schema::create('_approvals', function (Blueprint $table) {
             $table->id();
-            $table->integer('UserID');
-            $table->integer('ContactID');
-            $table->integer('AssignmentID');
+            $table->integer('user_id');
+            $table->integer('contract_id');
+            $table->integer('assignment_id');
             $table->timestamps('');
         });
     }

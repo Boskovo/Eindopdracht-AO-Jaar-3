@@ -15,13 +15,13 @@ class CreateVacanciesTable extends Migration
     {
         Schema::create('vacancies', function (Blueprint $table) {
             $table->id();
-            $table->integer('CompanyID');
-            $table->text('JobDescription');
-            $table->boolean('Active');
-            $table->string('Title');
-            $table->timestamp('StartDate');
-            $table->timestamp('EndDate');
-            $table->geometry('Location');
+            $table->integer('company_id');
+            $table->text('body');
+            $table->string('title');
+            $table->timestamp('start_date');
+            $table->timestamp('end_date');
+            $table->geometry('location');
+            $table->boolean('is_active');
             $table->timestamp('timestamps');
         });
     }
