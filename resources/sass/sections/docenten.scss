@@ -1,26 +1,18 @@
 //de container links boven
+// ==========================================================================================
 .container_profiel_docent{
     height: 400px;
-    background-color: rgb(134, 117, 117);
-    border-radius: 20px; 
-    display: block;
-    overflow: auto ;
-   
+    background-color:  #ffffff;
+    border-radius: 20px;
 }
 
 
 .profiel_foto{
-    background-color: #ffffff;
-    width: 100px;
-    height: 100px;
-    display: block;
+    background-color: #A9ABAA;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 5%;
-    
-
-
+    margin: auto;
 }
 
 .info_persoon{
@@ -30,7 +22,15 @@
 
 
 .cv_block{
+    width: 30%;
     text-align-last: center;
+    background-color: #de0000;
+    margin-left: auto;
+    margin-right: auto;
+
+    a{
+        color: black;
+    }
 }
 
 
@@ -40,14 +40,13 @@
 .container_informatie_stage {
     height: 400px;
     width: 100%;
-    background-color: rgb(134, 117, 117);
-    overflow: inherit;
+    background-color: #ffffff;
     border-radius: 20px; 
   
 }
 
 .aanvragen_goedkeuring{
-    background-color: white;
+    background-color: #A9ABAA;
     height: 330px;
     width: 280px;
     border-radius: 5%;
@@ -59,17 +58,53 @@
 }
 
 
+.Text-info {
+    height: 70%;
+    li {
+        color: black;
+    }
+}
+
+.button-progress {
+    text-align-last: center;
+}
+
+
+.huidig_stagebedrijf{
+    background-color: #A9ABAA;
+    height: 30px;
+    width: 30px;
+    border-radius: 5%;
+}
+
+.button-progress{
+    width: 50%;
+    text-align-last: center;
+    background-color: #de0000;
+    margin-left: auto;
+    margin-right: auto;
+
+    a{
+        color: black;
+    }
+}
 
 
 
-// de container onder boven
+// de container onder
 // ================================================================================
 
 
 .container_ingeleverde_documenten {
-    height: 250px;
     width: 100%;
-    background-color: rgb(134, 117, 117);
+    background-color: #ffffff;
     margin-top: 20px;
     border-radius: 20px; 
 }
+
+.ingeleverd_documenten{
+    background-color: #A9ABAA;
+    border-radius: 20px;
+}
+
+
