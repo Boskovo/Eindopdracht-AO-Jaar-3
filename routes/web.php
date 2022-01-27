@@ -51,6 +51,8 @@ Route::get('/docenten/klassen', [TeacherController::class, 'classes'])->name('te
 Route::get('/vacatures', [CompanyController::class, 'vacancies'])->name('company.vacancies');
 
 Route::resource('bedrijven', CompanyController::class);
+Route::get('/vacature-aanmaken', [CompanyController::class, 'create_vacancy'])->name('company.create_vacancy');
+
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);

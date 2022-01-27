@@ -91,4 +91,8 @@ class CompanyController extends Controller
     {
         return view('company.vacancies.index');
     }
+    public function create_vacancy()
+    {
+        return view('company.vacancies.createvacancy');
+    }
 }
