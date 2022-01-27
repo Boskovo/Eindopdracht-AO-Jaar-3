@@ -9,6 +9,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,6 @@ Route::get('/docenten/klassen', [TeacherController::class, 'create'])->name('tea
 
 Route::resource('bedrijven', CompanyController::class);
 
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('users', UserController::class);
+});
