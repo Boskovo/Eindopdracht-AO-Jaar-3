@@ -11,6 +11,16 @@ class TeacherController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function document_verify()
+    {
+        return view('teacher.documentverify');
+    }
+
+    public function classes()
+    {
+        return view('teacher.classes');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -85,15 +95,5 @@ class TeacherController extends Controller
     public function destroy(Teacher $teacher)
     {
         //
-    }
-
-    public function document_verify()
-    {
-        return view('teacher.documentverify');
-    }
-
-    public function classes()
-    {
-        return view('teacher.student-classes');
     }
 }

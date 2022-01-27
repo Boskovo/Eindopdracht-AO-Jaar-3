@@ -43,7 +43,8 @@ Route::get('/documenten-stage', [StudentController::class, 'documents'])->name('
 
 Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('admin');
 
-Route::resource('docenten', TeacherController::class);
+//Route::resource('docenten', TeacherController::class);
+Route::get('/docenten', [TeacherController::class, 'index'])->name('docenten.index');
 Route::get('/docenten/documenten/goedkeuren', [TeacherController::class, 'document_verify'])->name('teacher.verify');
 Route::get('/docenten/klassen', [TeacherController::class, 'classes'])->name('teacher.classes');
 
