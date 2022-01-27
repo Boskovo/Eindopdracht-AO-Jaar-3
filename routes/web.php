@@ -48,7 +48,7 @@ Route::get('/docenten', [TeacherController::class, 'index'])->name('docenten.ind
 Route::get('/docenten/documenten/goedkeuren', [TeacherController::class, 'document_verify'])->name('teacher.verify');
 Route::get('/docenten/klassen', [TeacherController::class, 'classes'])->name('teacher.classes');
 
-Route::get('/vacatures', [TeacherController::class, 'vacancies'])->name('company.vacancies');
+Route::get('/vacatures', [CompanyController::class, 'vacancies'])->name('company.vacancies');
 
 Route::resource('bedrijven', CompanyController::class);
 
