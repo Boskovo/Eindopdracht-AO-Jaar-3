@@ -15,11 +15,11 @@ class CreateContractsTable extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id')->references('id')->on('users');
-            $table->foreignId('docent_id')->references('id')->on('users');
-            $table->foreignId('company_id')->references('id')->on('companies');
-            $table->timestamp('start_date');
-            $table->timestamp('end_date');
+            $table->foreignId('student_id');
+            $table->foreignId('docent_id');
+            $table->foreignId('company_id');
+            $table->string('start_date');
+            $table->string('end_date');
             $table->boolean('is_active');
             $table->timestamp('timestamps');
         });

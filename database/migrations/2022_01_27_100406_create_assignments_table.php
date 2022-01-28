@@ -15,10 +15,10 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->foreignId('user_id');
             $table->text('body');
-            $table->timestamp('start_date');
-            $table->timestamp('end_date');
+            $table->string('start_date');
+            $table->string('end_date');
             $table->boolean('is_active');
             $table->timestamps();
         });

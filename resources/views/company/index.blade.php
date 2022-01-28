@@ -20,6 +20,13 @@
               <p>Backend</p>
               <p>Full stack developer</p>
           </div>
+          <div class="compbtnwrap mx-3 mb-2">
+            <div class="compbutton text-center">
+              <div class="compbtntext">
+                <a href="/vacature-aanmaken">Nieuwe Vacature</a>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
     <div class="col">

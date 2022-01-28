@@ -13,11 +13,11 @@ class CreateApprovalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('_approvals', function (Blueprint $table) {
+        Schema::create('approvals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->references('id')->on('users');
-            $table->foreignId('contract_id')->references('id')->on('contracts');
-            $table->foreignId('assignment_id')->references('id')->on('assignments');
+            $table->foreignId('user_id');
+            $table->foreignId('contract_id');
+            $table->foreignId('assignment_id');
             $table->timestamps('');
         });
     }
@@ -29,6 +29,6 @@ class CreateApprovalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_approvals');
+        Schema::dropIfExists('approvals');
     }
 }

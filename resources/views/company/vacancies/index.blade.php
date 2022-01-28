@@ -26,19 +26,19 @@
                 <div class="row">
                     <div class="col-xl">
                         <h6>Locatie:</h6>
-                        <h6>{Plaats}</h6>
+                        <h6 class="text-muted">{Plaats}</h6>
                     </div>
                     <div class="col-xl">
                         <h6>Periode:</h6>
-                        <h6>{Periode}</h6>
+                        <h6 class="text-muted">{Periode}</h6>
                     </div>
                     <div class="col-xl">
                        <h6>Gewijzigd:</h6>
-                       <h6>{Datum}</h6>
+                       <h6 class="text-muted">{Datum}</h6>
                     </div>
                     <div class="col-xl">
                         <h6>Beschikbaar:</h6>
-                        <h6>{Ja/Nee}</h6>
+                        <h6 class="text-muted">{Ja/Nee}</h6>
                     </div>
                 </div>
                 <hr>
@@ -99,7 +99,7 @@
                           <h4>Adresgegevens:</h4>
                       </div>
                       <p>
-                          <b>Adres:</b> <br>
+                          <b>Adres:</b><br>
                           <b>Postcode:</b> <br>
                           <b>Plaats:</b> <br>
                       </p>
@@ -107,18 +107,18 @@
                           <h4>Contactgegevens:</h4>
                       </div>
                       <p>
-                          <b>Contactpersoon:</b> <br>
-                          <b>Email</b> <br>
+                          <b>Contactpersoon:</b> {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}<br>
+                          <b>Email</b> {{ Auth::user()->email }}<br>
                           <b>Telefoon:</b> <br>
                       </p>
                       <div class="mt-2">
                           <h4>Leerbedrijf ID:</h4>
-                          <p>{id}</p>
+                          <p class="text-muted">139970</p>
                       </div>
                   </div>
               </div>
-              <div class="row">
-                  <div class="col">
+              <div class="row mt-2">
+                  <div class="col-4">
                         <div class="btnwrap">
                             <div class="contactbutton text-center">
                                 <div class="vacbtntext">
@@ -127,8 +127,8 @@
                             </div>
                         </div>
                   </div>
-                  <div class="col">
-                        <div class="btnwrap">
+                  <div class="col-8">
+                        <div class="btnwrap ms-4">
                             <div class="vacsitebutton text-center">
                                 <div class="vacbtntext">
                                     <a href="">Bekijk Op Website</a>
