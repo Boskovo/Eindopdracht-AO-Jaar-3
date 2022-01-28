@@ -14,7 +14,7 @@
                                 <h5>Gebruikers:</h5>
                             </div>
                             <div class="col-6 text-end">
-                                <p><a href="{{ route('users.create') }}">gebruiker toevoegen</a></p>
+                                <p><a href="{{ route('users.index') }}">toon meer</a></p>
                             </div>
                             <div class="col-md-12">
                                 <table class="table table-hover">
@@ -63,10 +63,10 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
-                                <h5>Gebruikers:</h5>
+                                <h5>Rollen:</h5>
                             </div>
                             <div class="col-6 text-end">
-                                <p><a href="{{ route('users.create') }}">gebruiker toevoegen</a></p>
+                                <p><a href="{{ route('roles.index') }}">toon meer</a></p>
                             </div>
                             <div class="col-12">
                                 <table class="table">
