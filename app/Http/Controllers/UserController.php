@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Validation\ValidationException;
 use Spatie\Permission\Models\Role;
-use DB;
-use Hash;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
 
 class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $data = User::orderBy('id','DESC')->paginate(5);
+        $data = User::orderBy('id')->get();
         return view('admin.user.index',compact('data'));
     }
 
@@ -26,6 +27,9 @@ class UserController extends Controller
     }
 
 
+    /**
+     * @throws ValidationException
+     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -42,14 +46,8 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('admin.user.index')
+        return redirect()->route('users.index')
             ->with('success','User created successfully');
-    }
-
-    public function show($id)
-    {
-        $user = User::find($id);
-        return view('admin.user.show',compact('user'));
     }
 
     public function edit($id)
@@ -61,6 +59,9 @@ class UserController extends Controller
         return view('admin.user.edit',compact('user','roles','userRole'));
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
@@ -84,14 +85,14 @@ class UserController extends Controller
 
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('admin')
+        return redirect()->route('users.index')
             ->with('success','User updated successfully');
     }
 
-    public function destroy($id)
+    public function destroy($id): \Illuminate\Http\RedirectResponse
     {
         User::find($id)->delete();
-        return redirect()->route('admin.user.index')
+        return redirect()->route('users.index')
             ->with('success','User deleted successfully');
     }
 }
