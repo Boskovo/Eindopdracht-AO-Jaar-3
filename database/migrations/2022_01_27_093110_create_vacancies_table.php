@@ -15,7 +15,7 @@ class CreateVacanciesTable extends Migration
     {
         Schema::create('vacancies', function (Blueprint $table) {
             $table->id();
-            $table->integer('company_id');
+            $table->foreignId('company_id')->references('is')->on('companies');
             $table->text('body');
             $table->string('title');
             $table->timestamp('start_date');

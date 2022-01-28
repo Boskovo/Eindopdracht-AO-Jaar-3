@@ -15,10 +15,11 @@ class CreateWorkstatesTable extends Migration
     {
         Schema::create('workstates', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->string('title');
             $table->text('body');
-            $table->integer('approval_id');
+            //$table->integer('approval_id');
+            $table->foreignId('approval_id')->references('id')->on('approvals');
             $table->timestamps();
         });
     }

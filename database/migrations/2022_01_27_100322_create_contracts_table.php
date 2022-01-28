@@ -15,9 +15,9 @@ class CreateContractsTable extends Migration
     {
         Schema::create('contracts', function (Blueprint $table) {
             $table->id();
-            $table->integer('student_id');
-            $table->integer('docent_id');
-            $table->integer('company_id');
+            $table->foreignId('student_id')->references('id')->on('users');
+            $table->foreignId('docent_id')->references('id')->on('users');
+            $table->foreignId('company_id')->references('id')->on('companies');
             $table->timestamp('start_date');
             $table->timestamp('end_date');
             $table->boolean('is_active');
