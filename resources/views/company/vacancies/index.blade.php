@@ -118,7 +118,7 @@
                   </div>
               </div>
               <div class="row">
-                  <div class="col">
+                  <div class="col-6">
                         <div class="btnwrap">
                             <div class="contactbutton text-center">
                                 <div class="vacbtntext">
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                   </div>
-                  <div class="col">
+                  <div class="col-6">
                         <div class="btnwrap">
                             <div class="vacsitebutton text-center">
                                 <div class="vacbtntext">
