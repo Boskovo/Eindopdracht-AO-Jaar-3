@@ -1,110 +1,43 @@
-//de container links boven
-// ==========================================================================================
-.container_profiel_docent{
-    height: 400px;
-    background-color:  #ffffff;
-    border-radius: 20px;
-}
+.docentenprofiel {
+    .profile-dashboard {
+        background-color: white;
+        border-radius: 10px;
 
+        .profile-holder{
 
-.profiel_foto{
-    background-color: #A9ABAA;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: auto;
-}
+            .profile-img-wrapper{
+                background-color: transparent;
+                border: solid 2px;
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+            }
 
-.info_persoon{
-    border-top: 1px solid ;
-    margin: 11%;
-}
+            .profile-info{
+                border-top: solid 2px black;
+            }
 
+            .cv-button{
+                border-radius: 10px;
+                background-color: #003581;
+                width: 25%;
+                
+                a{
+                    color: white;
+                }
+            }
 
-.cv_block{
-    width: 30%;
-    text-align-last: center;
-    background-color: #de0000;
-    margin-left: auto;
-    margin-right: auto;
-
-    a{
-        color: black;
-    }
-}
-
-
-//de container rechts boven
-// ===========================================================================
-
-.container_informatie_stage {
-    height: 400px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 20px; 
-  
-}
-
-.aanvragen_goedkeuring{
-    background-color: #A9ABAA;
-    height: 330px;
-    width: 280px;
-    border-radius: 5%;
-
-    ul {
-        list-style-type: none;
+        }
     }
 
-}
+    .stage-info {
+        background-color: white;
+        border-radius: 10px;
+    }
 
-
-.Text-info {
-    height: 70%;
-    li {
-        color: black;
+    .file-holder {
+        background-color: white;
+        border-radius: 10px;
     }
 }
-
-.button-progress {
-    text-align-last: center;
-}
-
-
-.huidig_stagebedrijf{
-    background-color: #A9ABAA;
-    height: 30px;
-    width: 30px;
-    border-radius: 5%;
-}
-
-.button-progress{
-    width: 50%;
-    text-align-last: center;
-    background-color: #de0000;
-    margin-left: auto;
-    margin-right: auto;
-
-    a{
-        color: black;
-    }
-}
-
-
-
-// de container onder
-// ================================================================================
-
-
-.container_ingeleverde_documenten {
-    width: 100%;
-    background-color: #ffffff;
-    margin-top: 20px;
-    border-radius: 20px; 
-}
-
-.ingeleverd_documenten{
-    background-color: #A9ABAA;
-    border-radius: 20px;
-}
-
-
