@@ -117,8 +117,8 @@
                       </div>
                   </div>
               </div>
-              <div class="row">
-                  <div class="col-6">
+              <div class="row mt-2">
+                  <div class="col-4">
                         <div class="btnwrap">
                             <div class="contactbutton text-center">
                                 <div class="vacbtntext">
@@ -127,8 +127,8 @@
                             </div>
                         </div>
                   </div>
-                  <div class="col-6">
-                        <div class="btnwrap">
+                  <div class="col-8">
+                        <div class="btnwrap ms-4">
                             <div class="vacsitebutton text-center">
                                 <div class="vacbtntext">
                                     <a href="">Bekijk Op Website</a>

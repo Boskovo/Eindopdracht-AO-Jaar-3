@@ -7,7 +7,7 @@
         <div class="col">
             <div class="card m-4">
                 <div class="card-body">
-                    <div class="">
+                    <div class="p-2">
                         <h1>Nieuwe Vacature aanmaken</h1>
                     </div>
                     <form >
