@@ -28,7 +28,7 @@
                             <div class="col-2">
                                 <a href="" data-bs-toggle="modal" data-bs-target="#updateLink{{$link->id}}"><i
                                         class="fas fa-edit"></i></a>
-                                <a href=""><i class="fas fa-trash-alt"></i></a>
+                                <a href="{{ route('settings.destroy.link', $link->id) }}"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </div>
                     </div>

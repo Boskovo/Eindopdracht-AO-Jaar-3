@@ -27,6 +27,7 @@ Route::controller(SettingsController::class)->prefix('instellingen')->group(func
     Route::put('/update', 'update')->name('settings.update');
     Route::post('/create/link', 'create_link')->name('settings.create.link');
     Route::put('/link/{id}/update', 'update_link')->name('settings.update.link');
+    Route::get('/link/{id}/delete', 'destroy_link')->name('settings.destroy.link');
     Route::post('/address/create', 'create_address')->name('settings.create.address');
 });
 

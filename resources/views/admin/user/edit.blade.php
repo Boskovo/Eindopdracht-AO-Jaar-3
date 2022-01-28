@@ -1,12 +1,9 @@
 @extends('layouts.app')
-
+@section('title', "$user->firstname $user->lastname bewerken")
 
 @section('content')
     <div class="main py-4">
         <div class="row">
-            <div class="col-12">
-{{--                <a href="{{ URL::previous() }}"><i class="fas fa-long-arrow-alt-left"></i></a>--}}
-            </div>
             <div class="col-8">
                 <div class="card">
                     <div class="card-body">

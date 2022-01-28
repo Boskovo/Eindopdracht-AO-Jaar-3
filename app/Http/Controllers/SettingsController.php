@@ -59,6 +59,13 @@ class SettingsController extends Controller
         return redirect()->back()->with('success', 'Link bijgewerkt.');
     }
 
+    public function destroy_link(Request $request, $id): \Illuminate\Http\RedirectResponse
+    {
+        Link::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Link verwijderd.');
+    }
+
     protected function create_address()
     {
         $address = new Address();
