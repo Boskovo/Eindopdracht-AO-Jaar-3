@@ -12,50 +12,52 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-Route::get('/', function(){ return redirect()->route('login'); });
+//------------------------------------------------------------------------------------------
+
+Route::get('/', function () { return redirect()->route('login'); });
 
 Auth::routes();
 
-Route::get('/home', [ShowController::class, 'dashboard'])->name('home');
+Route::controller(ShowController::class)->prefix('dashboard')->group(function () {
+    Route::get('/', 'dashboard')->name('home');
+});
 
-Route::get('/instellingen', [SettingsController::class, 'show'])->name('settings');
-Route::put('/instellingen/update', [SettingsController::class, 'update'])->name('settings.update');
+Route::controller(SettingsController::class)->prefix('instellingen')->group(function () {
+    Route::get('/', 'show')->name('settings');
+    Route::put('/update', 'update')->name('settings.update');
+    Route::post('/create/link', 'create_link')->name('settings.create.link');
+    Route::put('/link/{id}/update', 'update_link')->name('settings.update.link');
+    Route::post('/address/create', 'create_address')->name('settings.create.address');
+});
 
-Route::post('/instellingen/create/link', [SettingsController::class, 'create_link'])->name('settings.create.link');
-Route::put('/instellingen/update/link/{id)', [SettingsController::class, 'update_link'])->name('settings.update.link');
-
-Route::post('/instellingen/create/address', [SettingsController::class, 'create_address'])->name('settings.create.address');
-
-Route::get('/profiel', [ProfileController::class, 'show'])->name('profile');
+Route::controller(StudentController::class)->prefix('student')->group(function () {
+    Route::get('/zoek-stage', 'search_internship')->name('search.internship');
+    Route::get('/documenten', 'documents')->name('student.documents');
+});
 
 Route::resource('studenten', StudentController::class);
-Route::get('/zoek-stage', [StudentController::class, 'search_internship'])->name('search.internship');
-Route::get('/documenten-stage', [StudentController::class, 'documents'])->name('student.documents');
 
-Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('admin');
+Route::controller(ProfileController::class)->prefix('profiel')->group(function () {
+    Route::get('/', 'show')->name('profile');
+});
 
-//Route::resource('docenten', TeacherController::class);
-Route::get('/docenten', [TeacherController::class, 'index'])->name('docenten.index');
-Route::get('/docenten/documenten/goedkeuren', [TeacherController::class, 'document_verify'])->name('teacher.verify');
-Route::get('/docenten/klassen', [TeacherController::class, 'classes'])->name('teacher.classes');
-
-Route::get('/vacatures', [CompanyController::class, 'vacancies'])->name('company.vacancies');
-
-Route::resource('bedrijven', CompanyController::class);
-Route::get('/vacature-aanmaken', [CompanyController::class, 'create_vacancy'])->name('company.create_vacancy');
-
-
-Route::group(['middleware' => ['auth']], function() {
+Route::controller(AdminController::class)->prefix('admin')->group(function () {
+    Route::get('/dashboard', 'index')->name('admin');
     Route::resource('users', UserController::class);
     Route::resource('roles', RoleController::class);
 });
+
+Route::controller(TeacherController::class)->prefix('docenten')->group(function () {
+    Route::get('/', 'index')->name('docenten.index');
+    Route::get('/documenten/goedkeuren', 'document_verify')->name('teacher.verify');
+    Route::get('/klassen','classes')->name('teacher.classes');
+});
+
+//Route::resource('docenten', TeacherController::class);
+
+Route::controller(CompanyController::class)->prefix('bedrijven')->group(function () {
+    Route::get('/vacatures', 'vacancies')->name('company.vacancies');
+    Route::get('/vacature/aanmaken', 'create_vacancy')->name('company.create_vacancy');
+});
+
+Route::resource('bedrijven', CompanyController::class);

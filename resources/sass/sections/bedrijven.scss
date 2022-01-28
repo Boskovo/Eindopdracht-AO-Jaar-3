@@ -1,0 +1,21 @@
+.compbtntext {
+    align-items: center;
+    margin-top: 5px;
+  }
+  .compbtnwrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: #ffffff;
+    }
+  }
+  .compbutton {
+    display: inline-block;
+    background-color: #de0000;
+    border-radius: 20px;
+    width: 150px;
+    height: 35px;
+  }
