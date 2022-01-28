@@ -29,6 +29,8 @@ Route::controller(SettingsController::class)->prefix('instellingen')->group(func
     Route::put('/link/{id}/update', 'update_link')->name('settings.update.link');
     Route::get('/link/{id}/delete', 'destroy_link')->name('settings.destroy.link');
     Route::post('/address/create', 'create_address')->name('settings.create.address');
+    Route::put('/address/{id}/update', 'update_address')->name('settings.update.address');
+    Route::get('/address/{id}/destroy', 'destroy_address')->name('settings.destroy.address');
 });
 
 Route::controller(StudentController::class)->prefix('student')->group(function () {
