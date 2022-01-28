@@ -14,9 +14,7 @@ use App\Http\Controllers\RoleController;
 
 //------------------------------------------------------------------------------------------
 
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+Route::get('/', function () { return redirect()->route('login'); });
 
 Auth::routes();
 
