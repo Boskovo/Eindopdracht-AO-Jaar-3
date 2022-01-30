@@ -25,10 +25,12 @@ Route::controller(ShowController::class)->prefix('dashboard')->group(function ()
 Route::controller(SettingsController::class)->prefix('instellingen')->group(function () {
     Route::get('/', 'show')->name('settings');
     Route::put('/update', 'update')->name('settings.update');
-    Route::post('/create/link', 'create_link')->name('settings.create.link');
+    Route::post('/link/create', 'create_link')->name('settings.create.link');
+    Route::get('/link/{id}/edit', 'edit_link')->name('settings.edit.link');
     Route::put('/link/{id}/update', 'update_link')->name('settings.update.link');
     Route::get('/link/{id}/delete', 'destroy_link')->name('settings.destroy.link');
     Route::post('/address/create', 'create_address')->name('settings.create.address');
+    Route::get('/address/{id)/edit', 'edit_address')->name('settings.edit.address');
     Route::put('/address/{id}/update', 'update_address')->name('settings.update.address');
     Route::get('/address/{id}/destroy', 'destroy_address')->name('settings.destroy.address');
 });

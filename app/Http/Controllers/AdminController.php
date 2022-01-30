@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\User;
@@ -12,14 +16,21 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|Response
+     * @return RedirectResponse
      */
     public function index()
     {
-        $users = User::all()->take(5);
-        $roles = Role::all();
 
-        return view('admin.index', compact('users', 'roles'));
+        if(auth()->user()->hasAnyRole('Admin', 'admin', 'beheerder', 'Beheerder' ))
+        {
+            $users = User::all()->take(5);
+            $roles = Role::all();
+
+            return view('auth.admin.index', compact('users', 'roles'));
+        } else {
+            return redirect()->back()->with('success', 'Dit account is niet gemachtigd.');
+        }
+
     }
 
     /**

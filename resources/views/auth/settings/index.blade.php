@@ -6,9 +6,9 @@
         <div class="row">
 
             <div class="col-12 col-xl-12">
-                @include('settings.includes.general')
-                @include('settings.includes.links')
-                @include('settings.includes.address')
+                @include('auth.settings.general')
+                @include('auth.settings.links.links')
+                @include('auth.settings.address.address')
             </div>
 
         </div>

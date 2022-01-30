@@ -16,14 +16,14 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $data = User::orderBy('id')->get();
-        return view('admin.user.index',compact('data'));
+        return view('auth.admin.user.index',compact('data'));
     }
 
 
     public function create()
     {
         $roles = Role::pluck('name','name')->all();
-        return view('admin.user.create',compact('roles'));
+        return view('auth.admin.user.create',compact('roles'));
     }
 
 
@@ -46,7 +46,7 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('users.index')
+        return redirect()->route('auth.users.index')
             ->with('success','User created successfully');
     }
 
@@ -56,7 +56,7 @@ class UserController extends Controller
         $roles = Role::pluck('name','name')->all();
         $userRole = $user->roles->pluck('name','name')->all();
 
-        return view('admin.user.edit',compact('user','roles','userRole'));
+        return view('auth.admin.user.edit',compact('user','roles','userRole'));
     }
 
     /**
@@ -85,14 +85,14 @@ class UserController extends Controller
 
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('users.index')
+        return redirect()->route('auth.users.index')
             ->with('success','User updated successfully');
     }
 
     public function destroy($id): \Illuminate\Http\RedirectResponse
     {
         User::find($id)->delete();
-        return redirect()->route('users.index')
+        return redirect()->route('auth.users.index')
             ->with('success','User deleted successfully');
     }
 }

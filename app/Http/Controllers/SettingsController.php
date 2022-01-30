@@ -19,7 +19,7 @@ class SettingsController extends Controller
 
     public function show()
     {
-        return view('settings.index');
+        return view('auth.settings.index');
     }
 
     public function update(SettingsUpdateRequest $request)
@@ -51,6 +51,13 @@ class SettingsController extends Controller
         return redirect()->back()->with('success', 'Link is aangemaakt.');
     }
 
+    public function edit_link($id)
+    {
+        $link = Link::find($id)->get();
+
+        return view('auth.settings.links.edit', compact('link'));
+    }
+
     public function update_link(Request $request, $id)
     {
 
@@ -73,12 +80,18 @@ class SettingsController extends Controller
         $address->number = request('number');
         $address->zipcode = request('zipcode');
         $address->city = request('city');
-//        $address->phone = request('phone');
         $address->user_id = Auth::id();
 
         $address->save();
 
         return redirect()->back()->with('success', 'Adres is aangemaakt.');
+    }
+
+    public function edit_address($id)
+    {
+        $address = Address::find($id)->get();
+
+        return view('auth.settings.address.edit', compact('address'));
     }
 
     public function update_address(Request $request, $id): \Illuminate\Http\RedirectResponse

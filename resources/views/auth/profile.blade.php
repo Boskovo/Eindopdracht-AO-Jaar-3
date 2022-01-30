@@ -21,9 +21,7 @@
                             </div>
                             <div class="col-md-6">
                                 <p>
-                                    <b>Persoonlijk Email:</b> <a
-                                        href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a><br>
-                                    <b>Zakelijke Email:</b> <a
+                                    <b>Email:</b> <a
                                         href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</a><br>
                                     <b>Telefoon:</b> <a
                                         href="tel:{{ Auth::user()->phone }}">{{ Auth::user()->phone }}</a><br>
@@ -55,7 +53,6 @@
                                                 <b>Adres:</b> {{ $address->street }} {{ $address->number }}<br>
                                                 <b>Postcode:</b> {{ $address->zipcode }}<br>
                                                 <b>Plaats:</b> {{ $address->city }}<br>
-                                                <b>Telefoon:</b> {{ $address->phone }}
                                             </p>
                                         </div>
                                     </div>
@@ -80,12 +77,12 @@
             </div>
         </div>
         <!--Vacaturescard-->
-        <div class="card"> 
+        <div class="card">
             <div class="card-body">
                         <div class="col-md-10 mb-3">
                             <h3>Vacatures</h3>
                         </div>
-                        <hr>    
+                        <hr>
                         <div class="row">
                             <div class="col-4">
                                 <div class="card m-1">
