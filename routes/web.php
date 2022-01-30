@@ -41,7 +41,7 @@ Route::controller(StudentController::class)->prefix('student')->group(function (
     Route::post('File-upload', [StudentController::class, 'dropzoneFileUpload'])->name('dropzoneFileUpload');
 });
 
-Route::resource('studenten', StudentController::class);
+Route::resource('student', StudentController::class);
 
 Route::controller(ProfileController::class)->prefix('profiel')->group(function () {
     Route::get('/', 'show')->name('profile');

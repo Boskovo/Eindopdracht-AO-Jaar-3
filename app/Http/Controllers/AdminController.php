@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\User;
+use App\Models\Company;
 use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
@@ -25,8 +26,9 @@ class AdminController extends Controller
         {
             $users = User::all()->take(5);
             $roles = Role::all();
+            $companies = Company::all()->take(5);
 
-            return view('auth.admin.index', compact('users', 'roles'));
+            return view('auth.admin.index', compact('users', 'roles', 'companies'));
         } else {
             return redirect()->back()->with('success', 'Dit account is niet gemachtigd.');
         }
