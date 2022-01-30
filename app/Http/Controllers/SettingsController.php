@@ -36,7 +36,7 @@ class SettingsController extends Controller
             'email' => $request->email,
         ]);
 
-        return redirect()->back()->with('success', 'Instellingen bijgewerkt.');
+        return redirect()->back()->with('success', 'Instellingen zijn bijgewerkt.');
     }
 
     protected function create_link()
@@ -48,7 +48,7 @@ class SettingsController extends Controller
 
         $link->save();
 
-        return redirect()->back()->with('success', 'Link aangemaakt.');
+        return redirect()->back()->with('success', 'Link is aangemaakt.');
     }
 
     public function update_link(Request $request, $id)
@@ -56,14 +56,14 @@ class SettingsController extends Controller
 
         Link::where('id', $id)->update($request->all());
 
-        return redirect()->back()->with('success', 'Link bijgewerkt.');
+        return redirect()->back()->with('success', 'Link is bijgewerkt.');
     }
 
     public function destroy_link(Request $request, $id): \Illuminate\Http\RedirectResponse
     {
         Link::find($id)->delete();
 
-        return redirect()->back()->with('success', 'Link verwijderd.');
+        return redirect()->back()->with('success', 'Link is verwijderd.');
     }
 
     protected function create_address()
@@ -78,6 +78,20 @@ class SettingsController extends Controller
 
         $address->save();
 
-        return redirect()->back()->with('success', 'Adres aangemaakt.');
+        return redirect()->back()->with('success', 'Adres is aangemaakt.');
     }
+
+    public function update_address(Request $request, $id): \Illuminate\Http\RedirectResponse
+    {
+
+        return redirect()->back()->with('success', 'Adres is bijgewerkt.');
+    }
+
+    public function destroy_address(Request $request, $id): \Illuminate\Http\RedirectResponse
+    {
+        Address::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Adres is verwijderd.');
+    }
+
 }
