@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-xl">
                        <h6>Gewijzigd:</h6>
-                       <h6 class="text-muted">op {{ $vacancie->timestamps }}</h6>
+                       <h6 class="text-muted">op {{ $vacancie->updated_at }}</h6>
                     </div>
                     <div class="col-xl">
                         <h6>Beschikbaar:</h6>
@@ -50,8 +50,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                                et dolore magna aliqua. Elementum sagittis vitae et leo duis ut diam quam. 
+                                {{  $vacancie->learn }}
                                 </p>
                             </div>
                         </div>
@@ -61,8 +60,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                                et dolore magna aliqua. Elementum sagittis vitae et leo duis ut diam quam. 
+                                {{ $vacancie->demands }} 
                                 </p>
                             </div>
                         </div>
@@ -72,8 +70,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
-                                et dolore magna aliqua. Elementum sagittis vitae et leo duis ut diam quam. 
+                                {{ $vacancie->offer }}
                                 </p>
                             </div>
                         </div>

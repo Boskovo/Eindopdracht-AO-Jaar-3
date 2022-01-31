@@ -75,11 +75,10 @@
                     <div class="documentdrop text-center p-3">
                         <h1>Documenten / Werkstaten inleveren</h1>
                         <form action="{{ route('dropzoneFileUpload') }}" class="dropzone" id="file-upload" enctype="multipart/form-data">
-                            
-                            <div class="button-wrapper mt-3">
-                                <button type="file" class="file-upload p-1">Document Toevoegen</button>
-                                <button type="submit" class="submit-file p-1" value="submit">inleveren</button>
-                            </div>    
+                            <div class="button-wrapper p-2">
+                                <input name="file" multiple type="file" class="p-1" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/png,image/jpeg">
+                                <input class="submit-file" type="submit">
+                            </div>
                         </form>
                     </div>
                 </div>

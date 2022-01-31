@@ -18,6 +18,12 @@ class CreateVacanciesTable extends Migration
             $table->foreignId('company_id');
             $table->text('body');
             $table->string('title');
+            $table->string('course');
+            $table->string('variant');
+            $table->string('level');
+            $table->text('learn');
+            $table->text('demands');
+            $table->text('offer');
             $table->string('start_date');
             $table->string('end_date');
             $table->geometry('location');
