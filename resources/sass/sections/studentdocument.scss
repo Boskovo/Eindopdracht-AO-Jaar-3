@@ -1,5 +1,6 @@
 .documentdrop {
     background-color: #ffffff;
+    border-radius: 10px;
 }
 
 #drop_zone {
@@ -11,12 +12,11 @@
 }
 
 .button-wrapper {
-
     display: flex;
     z-index: 11;
     justify-content: space-between;
     align-items: center;
-
+    
     .submit-file {
         background-color: #de0000;
         border: none;
