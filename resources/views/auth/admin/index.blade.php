@@ -84,10 +84,10 @@
                                             <td>{{ $role->name }}</td>
                                             <td>
                                                 <a class="text-primary font-medium"
-                                                   href="{{ route('users.edit',$user->id) }}"><i class="fas fa-eye"></i></a>
+                                                   href="{{ route('users.edit',$role->id) }}"><i class="fas fa-eye"></i></a>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <a class="text-danger font-medium"
-                                                   href="{{ route('users.destroy',$user->id) }}"><i
+                                                   href="{{ route('users.destroy',$role->id) }}"><i
                                                         class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
@@ -127,10 +127,10 @@
                                             <td>{{ $company->email }} </td>
                                             <td>
                                                 <a class="text-primary font-medium"
-                                                   href="{{ route('users.edit',$user->id) }}"><i class="fas fa-eye"></i></a>
+                                                   href="{{ route('bedrijven.edit',$company->id) }}"><i class="fas fa-eye"></i></a>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <a class="text-danger font-medium"
-                                                   href="{{ route('users.destroy',$user->id) }}"><i
+                                                   href="{{ route('bedrijven.destroy',$company->id) }}"><i
                                                         class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>

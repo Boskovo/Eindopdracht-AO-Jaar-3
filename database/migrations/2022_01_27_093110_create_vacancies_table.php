@@ -22,7 +22,7 @@ class CreateVacanciesTable extends Migration
             $table->string('end_date');
             $table->geometry('location');
             $table->boolean('is_active');
-            $table->timestamp('timestamps');
+            $table->timestamps();
         });
     }
 

@@ -21,7 +21,7 @@ class CreateContractsTable extends Migration
             $table->string('start_date');
             $table->string('end_date');
             $table->boolean('is_active');
-            $table->timestamp('timestamps');
+            $table->timestamps();
         });
     }
 

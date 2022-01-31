@@ -18,7 +18,7 @@ class CreateApprovalsTable extends Migration
             $table->foreignId('user_id');
             $table->foreignId('contract_id');
             $table->foreignId('assignment_id');
-            $table->timestamps('');
+            $table->timestamps();
         });
     }
 

@@ -46,7 +46,7 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('auth.users.index')
+        return redirect()->route('users.index')
             ->with('success','User created successfully');
     }
 
@@ -85,14 +85,14 @@ class UserController extends Controller
 
         $user->assignRole($request->input('roles'));
 
-        return redirect()->route('auth.users.index')
+        return redirect()->route('users.index')
             ->with('success','User updated successfully');
     }
 
     public function destroy($id): \Illuminate\Http\RedirectResponse
     {
         User::find($id)->delete();
-        return redirect()->route('auth.users.index')
+        return redirect()->route('users.index')
             ->with('success','User deleted successfully');
     }
 }
