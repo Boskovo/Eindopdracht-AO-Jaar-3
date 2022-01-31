@@ -110,9 +110,11 @@ class CompanyController extends Controller
         return redirect()->back()->with('success', 'Bedrijf is verwijderd.');
     }
 
-    public function vacancies()
+    public function vacancies($id)
     {
-        return view('company.vacancies.index');
+        $vacancie = Vacancie::find($id);
+
+        return view('company.vacancies.index', compact('vacancie'));
     }
     public function create_vacancy()
     {
