@@ -23,7 +23,7 @@ class Company extends Model
 
     public function vacancie()
     {
-        return $this->hasMany(Vacancie::class);
+        return $this->hasMany(Vacancie::class, 'company_id');
     }
 
     public function user()

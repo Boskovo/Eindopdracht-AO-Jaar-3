@@ -67,7 +67,7 @@
                                 <p>
                                     <b>Klas:</b> <a href="">als gebruiker student dan show dit en geef klas weer</a><br>
                                     @if(auth()->user()->hasRole('admin'))
-                                        <b>Soort account:</b> {{ auth()->user()->roles->first()->name  }}<br>
+                                        <b>Soort account:</b> {{ auth()->user()->roles->first()->name }}<br>
                                     @endif
                                 </p>
                             </div>
@@ -84,19 +84,28 @@
                         </div>
                         <hr>
                         <div class="row">
+                        @foreach (Auth::user()->company->vacancie as $vacancie)
                             <div class="col-4">
                                 <div class="card m-1">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg">
                                                 <div class="pb-2 px-3">
-                                                    <h4>Frontend developer</h4>
+                                                    <h4>
+                                                        {{ $vacancie->title }}
+                                                    </h4> <!--{{ Auth::user()->company->vacancie }}-->
                                                 </div>
                                                 <div class="col">
                                                     <ul>
-                                                        <li>{Opleiding}</li>
-                                                        <li>{BOL/BBL}</li>
-                                                        <li>{MBO-Niveau}</li>
+                                                        <li>
+                                                            {{ $vacancie->course }}
+                                                        </li>
+                                                        <li>
+                                                            {{ $vacancie->variant }}
+                                                        </li>
+                                                        <li>
+                                                            {{ $vacancie->level }}
+                                                        </li>
                                                     </ul>
                                                     <div class="btnwrap">
                                                         <div class="vacaturebutton text-center mb-2 mx-2">
@@ -111,6 +120,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
