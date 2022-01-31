@@ -21,7 +21,7 @@
     </li>
 
     <li class="nav-item {{ request()->routeIs('docenten.index') ? 'active' : '' }}">
-        <a href="{{ route('docenten.index') }}" class="nav-link">
+        <a  class="nav-link">
             <span class="sidebar-icon me-3">
                <i class="fas fa-chalkboard-teacher"></i>
             </span>

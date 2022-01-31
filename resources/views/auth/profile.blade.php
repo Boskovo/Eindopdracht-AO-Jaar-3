@@ -101,7 +101,7 @@
                                                     <div class="btnwrap">
                                                         <div class="vacaturebutton text-center mb-2 mx-2">
                                                             <div class="vacbtntext">
-                                                                <a href="/vacatures">Bekijk Vacature</a>
+                                                                <a href="/bedrijven/vacatures/1">Bekijk Vacature</a>
                                                             </div>
                                                         </div>
                                                     </div>

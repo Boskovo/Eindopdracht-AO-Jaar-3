@@ -3,7 +3,7 @@
 
 @section('content')
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
 
     <script>
@@ -75,9 +75,7 @@
                     <div class="documentdrop text-center p-3">
                         <h1>Documenten / Werkstaten inleveren</h1>
                         <form action="{{ route('dropzoneFileUpload') }}" class="dropzone" id="file-upload" enctype="multipart/form-data">
-                            <div class="d-flex p-3 justify-content-center" id="drop_zone" ondrop="dropHandler(event);">
-                                <p>Drag one or more files to this Drop Zone ...</p>
-                            </div>
+                            
                             <div class="button-wrapper mt-3">
                                 <button type="file" class="file-upload p-1">Document Toevoegen</button>
                                 <button type="submit" class="submit-file p-1" value="submit">inleveren</button>
