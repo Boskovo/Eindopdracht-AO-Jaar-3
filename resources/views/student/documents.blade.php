@@ -74,7 +74,7 @@
                 <div class="col-lg-12">
                     <div class="documentdrop text-center p-3">
                         <h1>Documenten / Werkstaten inleveren</h1>
-                        <form {{ route('dropzoneFileUpload') }} class="dropzone" id="file-upload" enctype="multipart/form-data">
+                        <form action="{{ route('dropzoneFileUpload') }}" class="dropzone" id="file-upload" enctype="multipart/form-data">
                             <div class="d-flex p-3 justify-content-center" id="drop_zone" ondrop="dropHandler(event);">
                                 <p>Drag one or more files to this Drop Zone ...</p>
                             </div>
