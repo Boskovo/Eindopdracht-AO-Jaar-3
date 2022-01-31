@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GradeMember;
+use App\Models\Member;
 use App\Models\Student;
+use App\Models\User;
+use App\Models\Grade;
+use App\Models\Grade_Member;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -18,7 +23,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('student.index');
+        $students = User::all()->hasAnyRole('Student', 'student');
+
+        return view('student.index', compact('students'));
     }
 
     public function search_internship()
@@ -34,8 +41,8 @@ class StudentController extends Controller
     public function dropzoneFileUpload (Request $request){
         $image = $request->file('file');
 
-        $imageName = time().'.'.$image->extension(); 
-        $image->move(public_path('images'),$imageName);  
+        $imageName = time().'.'.$image->extension();
+        $image->move(public_path('images'),$imageName);
 
         return response()->json(['success'=>$imageName]);
     }
@@ -104,5 +111,13 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         //
+    }
+
+    public function grades_show($id)
+    {
+        $grade = Grade::find($id);
+        $grade_members = Member::find("grade_id" == $id);
+
+        return view('grades.show', compact('grade', 'grade_members'));
     }
 }

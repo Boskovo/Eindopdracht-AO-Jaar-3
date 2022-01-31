@@ -25,8 +25,8 @@
                             <b>Telefoon:</b> {{ $address->phone }}
                         </p>
                         <p>
-                            <a href="{{ route('settings.edit.address', $address->id) }}"><i class="fas fa-edit"></i></a>
-                            <a href="{{ route('settings.destroy.address', $address->id) }}"><i class="fas fa-trash-alt"></i></a>
+                            <a href="{{ route('settings.destroy.address', $address->id) }}"><i
+                                    class="fas fa-trash-alt"></i></a>
                         </p>
                     </div>
                 </div>
