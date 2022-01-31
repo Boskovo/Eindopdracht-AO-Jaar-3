@@ -55,7 +55,7 @@
                     <div class="btnwrap py-3">
                             <div class="makevacbutton text-center">
                                 <div class="makevacbtntext">
-                                    <a href="/vacatures">Nieuwe vacature aanmaken</a>
+                                    <a href="/bedrijven/vacatures/1">Nieuwe vacature aanmaken</a>
                                 </div>
                             </div>
                         </div>

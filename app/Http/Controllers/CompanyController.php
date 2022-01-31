@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use Illuminate\Http\Request;
+use App\Models\Vacancie;
 
 class CompanyController extends Controller
 {
@@ -89,11 +90,11 @@ class CompanyController extends Controller
         //
     }
 
-    public function vacancies()
+    public function vacancies($id)
     {
+        $vacancie = Vacancie::find($id);
 
-
-        return view('company.vacancies.index');
+        return view('company.vacancies.index', compact('vacancie'));
     }
     public function create_vacancy()
     {

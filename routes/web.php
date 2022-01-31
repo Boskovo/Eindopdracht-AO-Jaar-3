@@ -62,8 +62,9 @@ Route::controller(TeacherController::class)->prefix('docenten')->group(function 
 //Route::resource('docenten', TeacherController::class);
 
 Route::controller(CompanyController::class)->prefix('bedrijven')->group(function () {
-    Route::get('/vacatures', 'vacancies')->name('company.vacancies');
-    Route::get('/vacature/aanmaken', 'create_vacancy')->name('company.create_vacancy');
+    //Route::get('/vacatures', 'vacancies')->name('company.vacancies');
+    Route::get('/vacatures/aanmaken', 'create_vacancy')->name('company.create_vacancy');
+    Route::get('/vacatures/{id}', 'vacancies')->name('company.vacancies');
 });
 
 Route::resource('bedrijven', CompanyController::class);
