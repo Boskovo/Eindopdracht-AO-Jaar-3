@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="docentenprofiel">
-    <div class="row">
+    <div class="row align-items-stretch">
         <div class="col-12 col-lg-4">
             <div class="profile-dashboard d-flex justify-content-center text-center p-3">
                 <div class="profile-holder">
@@ -30,7 +30,7 @@
         </div>
         <div class="col-12 col-lg-8">
             <div class="stage-info">
-                <div class="row p-3">
+                <div class="row align-items-stretch p-3">
                     <div class="col-lg-4">
                         <div class="stage-status p-3">
                             <ul class="stage-status-list">

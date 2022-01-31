@@ -3,6 +3,7 @@
         background-color: white;
         border-radius: 10px;
         margin: auto;
+        height: 100%;
 
         .profile-holder {
 
@@ -45,11 +46,13 @@
     .stage-info {
         background-color: white;
         border-radius: 10px;
+        height: 100%;
 
         .stage-status {
 
             background-color: #F2F4F6;
             border-radius: 10px;
+            height: 100%;
 
             .progress-wrapper {
                 width: 80%;
@@ -79,6 +82,8 @@
         }
 
         .stage-description {
+            height: 100%;
+
             h2 {
                 border-bottom: solid 2px black;
             }
