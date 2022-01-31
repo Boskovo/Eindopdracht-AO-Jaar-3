@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Vacancie;
+use App\Models\Company;
 
-class Company extends Model
+class Vacancie extends Model
 {
     use HasFactory;
 
-    public function vacancie()
+    public function company()
     {
-        return $this->hasMany(Vacancie::class);
+        return $this->belongsTo(Company::class, 'company_id');
     }
 
 }

@@ -99,7 +99,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -142,12 +142,42 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
                                 <h5>Klassen:</h5>
+                            </div>
+                            <div class="col-6">
+                                <a href="">toon meer</a>
+                            </div>
+                            <div class="col-12">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">id</th>
+                                            <th scope="col">Naam</th>
+                                            <th scope="col" width="280px">Acties</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($grades as $grade)
+                                            <tr>
+                                                <th scope="row">{{ $grade->id }}</th>
+                                                <td>{{ $grade->name }} </td>
+                                                <td>
+                                                    <a class="text-primary font-medium"
+                                                       href="{{ route('users.edit',$user->id) }}"><i class="fas fa-eye"></i></a>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a class="text-danger font-medium"
+                                                       href="{{ route('users.destroy',$user->id) }}"><i
+                                                            class="fas fa-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
                             </div>
                         </div>
                     </div>
