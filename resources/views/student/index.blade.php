@@ -29,7 +29,7 @@
               <a href="">Pok aanvragen</a>
             </div>
             <div class="document-button text-center">
-              <a href="">Document inleveren</a>
+              <a href="{{ route('student.documents') }}">Document inleveren</a>
             </div>
           </div>
         </div>
