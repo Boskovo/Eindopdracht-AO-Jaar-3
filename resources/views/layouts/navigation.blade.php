@@ -29,8 +29,8 @@
         </a>
     </li>
 
-    <li class="nav-item {{ request()->routeIs('studenten.index') ? 'active' : '' }}">
-        <a href="{{ route('studenten.index') }}" class="nav-link">
+    <li class="nav-item {{ request()->routeIs('student.index') ? 'active' : '' }}">
+        <a href="{{ route('student.index') }}" class="nav-link">
             <span class="sidebar-icon me-3">
                <i class="fas fa-user-graduate"></i>
             </span>
@@ -47,6 +47,7 @@
         </a>
     </li>
 
+    @hasanyrole('Admin')
     <li class="nav-item {{ request()->routeIs('admin') ? 'active' : '' }}">
         <a href="{{ route('admin') }}" class="nav-link">
             <span class="sidebar-icon me-3">
@@ -55,6 +56,7 @@
             <span class="sidebar-text">{{ __('Admin Dashboard') }}</span>
         </a>
     </li>
+    @endhasanyrole
 
     <li class="nav-item {{ request()->routeIs('settings') ? 'active' : '' }}">
         <a href="{{ route('settings') }}" class="nav-link">

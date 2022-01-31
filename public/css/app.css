@@ -32610,95 +32610,110 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
   display: inline-block;
 }
 
-.container_profiel_docent {
-  height: 400px;
-  background-color: #ffffff;
-  border-radius: 20px;
-}
-
-.profiel_foto {
-  background-color: #A9ABAA;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+.docentenprofiel .profile-dashboard {
+  background-color: white;
+  border-radius: 10px;
   margin: auto;
 }
-
-.info_persoon {
-  border-top: 1px solid;
-  margin: 11%;
+.docentenprofiel .profile-dashboard .profile-holder .profile-img-wrapper {
+  background-color: transparent;
+  border: solid 2px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: auto;
 }
-
-.cv_block {
-  width: 30%;
-  -moz-text-align-last: center;
-       text-align-last: center;
+.docentenprofiel .profile-dashboard .profile-holder .profile-img-wrapper .profile-img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.docentenprofiel .profile-dashboard .profile-holder .profile-info {
+  border-top: solid 2px black;
+}
+.docentenprofiel .profile-dashboard .profile-holder .profile-info .profile-info-list {
+  padding: 0;
+}
+.docentenprofiel .profile-dashboard .profile-holder .cv-button {
+  border-radius: 10px;
+  background-color: #003581;
+}
+.docentenprofiel .profile-dashboard .profile-holder .cv-button a {
+  color: white;
+}
+.docentenprofiel .stage-info {
+  background-color: white;
+  border-radius: 10px;
+}
+.docentenprofiel .stage-info .stage-status {
+  background-color: #F2F4F6;
+  border-radius: 10px;
+}
+.docentenprofiel .stage-info .stage-status .progress-wrapper {
+  width: 80%;
+  margin: auto;
+}
+.docentenprofiel .stage-info .stage-status .progress-wrapper p {
+  margin-bottom: 5px;
+}
+.docentenprofiel .stage-info .stage-status .stage-status-list {
+  padding: 0;
+}
+.docentenprofiel .stage-info .stage-status .stage-status-list i {
+  float: right;
+}
+.docentenprofiel .stage-info .stage-status .stage-zoeken-buttton {
+  border-radius: 10px;
   background-color: #de0000;
-  margin-left: auto;
-  margin-right: auto;
 }
-.cv_block a {
-  color: black;
+.docentenprofiel .stage-info .stage-status .stage-zoeken-buttton a {
+  color: white;
 }
-
-.container_informatie_stage {
-  height: 400px;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 20px;
+.docentenprofiel .stage-info .stage-description h2, .docentenprofiel .stage-info .stage-description .h2 {
+  border-bottom: solid 2px black;
 }
-
-.aanvragen_goedkeuring {
-  background-color: #A9ABAA;
-  height: 330px;
-  width: 280px;
-  border-radius: 5%;
+.docentenprofiel .stage-info .stage-description .description-list {
+  padding: 0;
+  border-radius: 10px;
+  background-color: #F2F4F6;
 }
-.aanvragen_goedkeuring ul {
-  list-style-type: none;
+.docentenprofiel .file-holder {
+  background-color: white;
+  border-radius: 10px;
 }
-
-.Text-info {
-  height: 70%;
-}
-.Text-info li {
-  color: black;
-}
-
-.button-progress {
-  -moz-text-align-last: center;
-       text-align-last: center;
-}
-
-.huidig_stagebedrijf {
-  background-color: #A9ABAA;
-  height: 30px;
-  width: 30px;
-  border-radius: 5%;
-}
-
-.button-progress {
-  width: 50%;
-  -moz-text-align-last: center;
-       text-align-last: center;
+.docentenprofiel .file-holder .file-overzicht .document-button {
   background-color: #de0000;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 10px;
+  width: 200px;
+  padding: 5px;
 }
-.button-progress a {
-  color: black;
+.docentenprofiel .file-holder .file-overzicht .document-button a {
+  color: white;
 }
 
-.container_ingeleverde_documenten {
+.compbtntext {
+  align-items: center;
+  margin-top: 5px;
+}
+
+.compbtnwrap {
   width: 100%;
-  background-color: #ffffff;
-  margin-top: 20px;
-  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.compbtnwrap a {
+  color: #ffffff;
 }
 
-.ingeleverd_documenten {
-  background-color: #A9ABAA;
+.compbutton {
+  display: inline-block;
+  background-color: #de0000;
   border-radius: 20px;
+  width: 150px;
+  height: 35px;
 }
 
 .searchbar {
@@ -32871,8 +32886,21 @@ ul {
   display: inline-block;
   background-color: #003581;
   border-radius: 20px;
-  width: 150px;
+  width: 170px;
   height: 35px;
+}
+
+.makevacbutton {
+  display: inline-block;
+  background-color: #de0000;
+  border-radius: 20px;
+  width: 240px;
+  height: 40px;
+}
+
+.makevacbtntext {
+  align-items: center;
+  margin-top: 9px;
 }
 
 .invalid-feedback {
@@ -32885,39 +32913,4 @@ ul {
 
 .table > :not(:first-child) {
   border-top: 0;
-}
-
-.form-inputs {
-  position: relative;
-}
-
-.form-inputs .form-control {
-  height: 45px;
-}
-
-.form-inputs .form-control:focus {
-  box-shadow: none;
-  border: 1px solid #000;
-}
-
-.form-inputs i {
-  position: absolute;
-  right: 10px;
-  top: 15px;
-}
-
-.shop-bag {
-  background-color: #000;
-  color: #fff;
-  height: 50px;
-  width: 50px;
-  font-size: 25px;
-  display: flex;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-}
-
-.qty {
-  font-size: 12px;
 }
