@@ -78,7 +78,7 @@
                             <div class="button-wrapper p-2">
                                 <input name="file" multiple type="file" class="p-1" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/png,image/jpeg">
                                 <input class="submit-file" type="submit">
-                            </div>    
+                            </div>
                         </form>
                     </div>
                 </div>
