@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-xl">
                        <h6>Gewijzigd:</h6>
-                       <h6 class="text-muted">op {{ $vacancie->timestamps }}</h6>
+                       <h6 class="text-muted">op {{ $vacancie->updated_at }}</h6>
                     </div>
                     <div class="col-xl">
                         <h6>Beschikbaar:</h6>
