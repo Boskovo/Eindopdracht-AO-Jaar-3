@@ -20,12 +20,12 @@ class CreateCompaniesTable extends Migration
             $table->string('phone');
             $table->string('vat_number');
             $table->string('website');
-            $table->string('address_city');
-            $table->string('address_zip');
-            $table->string('address_street');
-            $table->string('address_street_number');
+//            $table->string('address_city');
+//            $table->string('address_zip');
+//            $table->string('address_street');
+//            $table->string('address_street_number');
             $table->bigInteger('user_id');
-            $table->timestamp('timestamps');
+            $table->timestamps();
         });
     }
 
