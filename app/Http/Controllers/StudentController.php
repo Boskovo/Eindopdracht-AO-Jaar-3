@@ -23,7 +23,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = User::all()->hasAnyRole('Student', 'student');
+        $students = User::all();
 
         return view('student.index', compact('students'));
     }

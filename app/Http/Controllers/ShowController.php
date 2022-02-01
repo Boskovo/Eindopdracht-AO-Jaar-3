@@ -26,11 +26,40 @@ public function dashboard(){
         $companies = Company::all()->take(5);
         $grades = Grade::all()->take(5);
 
-        return view('dashboard', compact('users', 'roles', 'companies', 'grades'));
+        return view('auth.admin.index', compact('users', 'roles', 'companies', 'grades'));
     }
-    else{
-        return view('dashboard');
+    if(auth()->user()->hasAnyRole('Docent', 'docent')) {
+        $companies = Company::all()->take(5);
+        $grades = Grade::all()->take(5);
+
+        return view('auth.admin.index', compact('companies', 'grades'));
     }
+
+    if(auth()->user()->hasAnyRole('Student', 'student')) {
+        $companies = Company::all()->take(5);
+
+        return view('auth.admin.index', compact('companies'));
+    }
+}
+
+public function search(Request $request)
+{
+    // Get the search value from the request
+    $search = $request->input('search');
+
+    // Search in the title and body columns from the posts table
+    $users = User::query()
+        ->where('firstname', 'LIKE', "%{$search}%")
+        ->orWhere('lastname', 'LIKE', "%{$search}%")
+        ->orWhere('email', 'LIKE', "%{$search}%")
+        ->get();
+
+    $grades = Grade::query()
+        ->where('name', 'LIKE', "%{$search}%")
+        ->get();
+
+    // Return the search view with the resluts compacted
+    return view('search.result', compact('users', 'grades'));
 }
 
 }

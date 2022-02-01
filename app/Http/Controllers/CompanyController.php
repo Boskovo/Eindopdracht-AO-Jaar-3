@@ -34,7 +34,9 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('company.create');
+        $users = User::pluck('firstname' , 'lastname', 'id');
+
+        return view('company.create', compact('users'));
     }
 
     /**
@@ -55,7 +57,6 @@ class CompanyController extends Controller
 
         $input = $request->all();
 
-//        $company->user_id = Auth::user()->id;
         $company = Company::create($input);
 
 
