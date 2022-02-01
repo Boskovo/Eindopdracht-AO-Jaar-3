@@ -128,10 +128,16 @@
                                             <td>
                                                 <a class="text-primary font-medium"
                                                    href="{{ route('bedrijven.edit',$company->id) }}"><i class="fas fa-eye"></i></a>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a class="text-danger font-medium"
-                                                   href="{{ route('bedrijven.destroy',$company->id) }}"><i
-                                                        class="fas fa-trash"></i></a>
+                                                <form method="POST" action="{{ route('bedrijven.destroy', $company->id) }}">
+                                                    <button style="background: none; border: none;" class="text-danger font-medium" type="submit">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </form>
+{{--                                                <a class="text-danger font-medium"--}}
+{{--                                                   href="{{ route('bedrijven.destroy',$company->id) }}"><i--}}
+{{--                                                        class="fas fa-trash"></i></a>--}}
                                             </td>
                                         </tr>
                                     @endforeach
@@ -185,11 +191,6 @@
             </div>
 
         </div>
-    </div>
-
-    <div class="col-4">
-
-    </div>
     </div>
 
 @endsection

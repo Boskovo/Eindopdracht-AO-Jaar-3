@@ -26,8 +26,6 @@
                                 </p>
                             </div>
                             <div class="col-2">
-                                <a href="{{ route( 'settings.edit.link', $link->id) }}"><i
-                                        class="fas fa-edit"></i></a>
                                 <a href="{{ route('settings.destroy.link', $link->id) }}"><i class="fas fa-trash-alt"></i></a>
                             </div>
                         </div>

@@ -38,7 +38,10 @@ Route::controller(SettingsController::class)->prefix('instellingen')->group(func
 Route::controller(StudentController::class)->prefix('student')->group(function () {
     Route::get('/zoek-stage', 'search_internship')->name('search.internship');
     Route::get('/documenten', 'documents')->name('student.documents');
-    Route::post('file-upload', 'dropzone')->name('dropzone');
+
+    Route::get('/klassen/{id}', 'grades_show')->name('student.grades.show');
+    Route::post('File-upload', [StudentController::class, 'dropzoneFileUpload'])->name('dropzoneFileUpload');
+
 });
 
 Route::resource('student', StudentController::class);
@@ -50,6 +53,7 @@ Route::controller(ProfileController::class)->prefix('profiel')->group(function (
 Route::controller(AdminController::class)->prefix('admin')->group(function () {
     Route::get('/dashboard', 'index')->name('admin');
     Route::resource('users', UserController::class);
+    Route::put('/{id}/destroy', 'destroy')->name('users.destroy');
     Route::resource('roles', RoleController::class);
 });
 

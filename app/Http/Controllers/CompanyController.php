@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\User;
 use App\Models\Vacancie;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -40,7 +41,7 @@ class CompanyController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
@@ -65,7 +66,7 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Company  $company
+     * @param Company $company
      * @return \Illuminate\Http\Response
      */
     public function show(Company $company)
@@ -76,7 +77,7 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Company  $company
+     * @param Company $company
      * @return \Illuminate\Http\Response
      */
     public function edit(Company $company)
@@ -88,7 +89,7 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Company  $company
+     * @param Company $company
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Company $company)
@@ -99,13 +100,12 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Company  $company
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return RedirectResponse
      */
-    public function destroy($id, Bedrijven $bedrijven)
+    public function destroy($id): RedirectResponse
     {
-        $bedrijven = Company::id();
-        Company::find($bedrijven)->delete();
+        Company::find($id)->delete();
 
         return redirect()->back()->with('success', 'Bedrijf is verwijderd.');
     }

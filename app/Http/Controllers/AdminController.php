@@ -18,21 +18,30 @@ class AdminController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return RedirectResponse
+     * @return Application|Factory|View|RedirectResponse
      */
     public function index()
     {
 
-        if(auth()->user()->hasAnyRole('Admin', 'admin', 'beheerder', 'Beheerder' ))
-        {
+        if(auth()->user()->hasAnyRole('Admin', 'admin', 'beheerder', 'Beheerder' )) {
             $users = User::all()->take(5);
             $roles = Role::all()->take(5);
             $companies = Company::all()->take(5);
             $grades = Grade::all()->take(5);
 
             return view('auth.admin.index', compact('users', 'roles', 'companies', 'grades'));
-        } else {
-            return redirect()->back()->with('success', 'Dit account is niet gemachtigd.');
+        }
+        if(auth()->user()->hasAnyRole('Docent', 'docent')) {
+            $companies = Company::all()->take(5);
+            $grades = Grade::all()->take(5);
+
+            return view('auth.admin.index', compact('companies', 'grades'));
+        }
+
+        if(auth()->user()->hasAnyRole('Student', 'student')) {
+            $companies = Company::all()->take(5);
+
+            return view('auth.admin.index', compact('companies'));
         }
 
     }
