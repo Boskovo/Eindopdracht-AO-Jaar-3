@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Grade extends Model
 {
     use HasFactory;
+
+    public function member()
+    {
+        return $this->hasMany(Member::class, 'grade_id', 'id');
+    }
+
+
 }

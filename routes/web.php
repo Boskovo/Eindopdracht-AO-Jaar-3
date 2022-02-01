@@ -42,7 +42,11 @@ Route::controller(SettingsController::class)->prefix('instellingen')->group(func
 Route::controller(StudentController::class)->prefix('student')->group(function () {
     Route::get('/zoek-stage', 'search_internship')->name('search.internship');
     Route::get('/documenten', 'documents')->name('student.documents');
+<<<<<<< Updated upstream
 
+=======
+    Route::get('/klassen', 'grades_index')->name('student.grades.index');
+>>>>>>> Stashed changes
     Route::get('/klassen/{id}', 'grades_show')->name('student.grades.show');
     Route::post('file-upload', 'dropzone')->name('dropzone');
 });

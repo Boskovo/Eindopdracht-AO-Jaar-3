@@ -245,7 +245,6 @@
                                                 <tr>
                                                     <th scope="col">ID</th>
                                                     <th scope="col">Naam</th>
-                                                    <th scope="col">Acties</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -253,11 +252,6 @@
                                                     <tr>
                                                         <th scope="row">{{ $role->id }}</th>
                                                         <td>{{ $role->name }}</td>
-                                                        <td>
-                                                            <a class="text-danger font-medium"
-                                                               href="{{ route('users.destroy',$role->id) }}"><i
-                                                                    class="fas fa-trash"></i></a>
-                                                        </td>
                                                     </tr>
                                                 @endforeach
                                                 </tbody>

@@ -74,7 +74,6 @@
                                     <tr>
                                         <th scope="col">ID</th>
                                         <th scope="col">Naam</th>
-                                        <th scope="col">Acties</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -82,14 +81,6 @@
                                         <tr>
                                             <th scope="row">{{ $role->id }}</th>
                                             <td>{{ $role->name }}</td>
-                                            <td>
-                                                <a class="text-primary font-medium"
-                                                   href="{{ route('users.edit',$role->id) }}"><i class="fas fa-eye"></i></a>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a class="text-danger font-medium"
-                                                   href="{{ route('users.destroy',$role->id) }}"><i
-                                                        class="fas fa-trash"></i></a>
-                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -155,8 +146,8 @@
                             <div class="col-6">
                                 <h5>Klassen:</h5>
                             </div>
-                            <div class="col-6">
-                                <a href="">toon meer</a>
+                            <div class="col-6 text-end">
+                                <a href="{{ route('student.grades.index') }}">toon meer</a>
                             </div>
                             <div class="col-12">
                                     <table class="table table-hover">

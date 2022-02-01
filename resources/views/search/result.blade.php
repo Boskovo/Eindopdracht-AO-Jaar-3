@@ -37,7 +37,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-6">
-                                        <p>{{ $garde->name }}</p>s
+                                        <p>{{ $grade->name }}</p>s
                                     </div>
                                 </div>
                             </div>

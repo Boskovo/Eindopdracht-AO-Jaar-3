@@ -34,9 +34,15 @@
                                 <h5>Klas leden:</h5>
                             </div>
                             <div class="col-12">
-
-                                    {{ dd($grade->members) }}
-
+                                @foreach($grade->member as $member)
+                                    <div class="col-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5>{{ dd($member->firstname) }}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

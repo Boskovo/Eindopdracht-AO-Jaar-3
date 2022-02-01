@@ -63,6 +63,10 @@ class User extends Authenticatable
         return $this->hasOne(Company::class);
     }
 
+    public function member()
+    {
+        return $this->hasOne(Member::class);
+    }
 
 
 
