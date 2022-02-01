@@ -7,9 +7,10 @@
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item dropdown ms-lg-3">
 
-                    <form class="d-flex text-end mb-1">
+                    <form class="d-flex text-end mb-1" action="{{ route('search') }}" method="GET">
+                        @csrf
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success" type="submit">Zoeken</button>
                     </form>
 {{--                    <a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button" data-bs-toggle="dropdown"--}}
 {{--                        aria-expanded="false">--}}

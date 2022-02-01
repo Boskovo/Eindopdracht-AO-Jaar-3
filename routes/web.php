@@ -22,6 +22,10 @@ Route::controller(ShowController::class)->prefix('dashboard')->group(function ()
     Route::get('/', 'dashboard')->name('home');
 });
 
+Route::controller(ShowController::class)->prefix('zoeken')->group(function(){
+    Route::get('/resultaten', 'search')->name('search');
+});
+
 Route::controller(SettingsController::class)->prefix('instellingen')->group(function () {
     Route::get('/', 'show')->name('settings');
     Route::put('/update', 'update')->name('settings.update');
