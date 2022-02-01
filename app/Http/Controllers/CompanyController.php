@@ -8,6 +8,7 @@ use App\Models\Vacancie;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
@@ -117,8 +118,28 @@ class CompanyController extends Controller
 
         return view('company.vacancies.index', compact('vacancie'));
     }
-    public function create_vacancy()
+    public function new_vacancy()
     {
         return view('company.vacancies.createvacancy');
+    }
+    protected function create_vacancy() 
+    {
+        $vacancie = new Vacancie();
+        $vacancie->body = request('body');
+        $vacancie->title = request('title');
+        $vacancie->course = request('course');
+        $vacancie->variant = request('variant');
+        $vacancie->level = request('level');
+        $vacancie->location = request('location');
+        $vacancie->start_date = request('start_date');
+        $vacancie->end_date = request('end_date');
+        $vacancie->learn = request('learn');
+        $vacancie->demands = request('demands');
+        $vacancie->offer = request('offer');
+        $vacancie->company_id = Auth::id();
+
+        $vacancie->save();
+
+        return redirect()->back()->with('success', 'Vacature is aangemaakt.');
     }
 }

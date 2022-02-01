@@ -26,8 +26,8 @@ class CreateVacanciesTable extends Migration
             $table->text('offer');
             $table->string('start_date');
             $table->string('end_date');
-            $table->geometry('location');
-            $table->boolean('is_active');
+            $table->string('location');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }

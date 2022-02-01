@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-xl">
                         <h6>Locatie:</h6>
-                        <h6 class="text-muted">{Locatie}</h6>
+                        <h6 class="text-muted">{{ $vacancie->location }}</h6>
                     </div>
                     <div class="col-xl">
                         <h6>Periode:</h6>
@@ -128,7 +128,7 @@
                         <div class="btnwrap ms-4">
                             <div class="vacsitebutton text-center">
                                 <div class="vacbtntext">
-                                    <a href="">Bekijk Op Website</a>
+                                    <a href="{{ $vacancie->company->website }}">Bekijk Op Website</a>
                                 </div>
                             </div>
                         </div>
