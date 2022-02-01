@@ -31,13 +31,46 @@ class StudentController extends Controller
         return view('student.documents');
     }
 
-    public function dropzoneFileUpload (Request $request){
-        $image = $request->file('file');
+    public function dropzone (Request $request){
+        dd();
+        // $image = $request->file('file');
 
-        $imageName = time().'.'.$image->extension(); 
-        $image->move(public_path('images'),$imageName);  
+        // $imageName = time().'.'.$image->extension(); 
+        // $image->move(public_path('images'),$imageName);  
 
-        return response()->json(['success'=>$imageName]);
+        // return response()->json(['success'=>$imageName]);
+       $this->validate($request,[
+          'cover_image' => 'image|nullable|max:1999' 
+       ]);
+
+       
+
+      
+
+       //handle file upload
+
+       if($request->hasFile('cover_image')){
+            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+            // get just file name 
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // get just extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            // filename store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //upload image
+            $path = $request->file('cover_image')->storeAs('public/cover_image' , $fileNameToStore);
+       }else {
+           $fileNameToStore = 'noimage.jpg';
+       }
+       
+       $input = $request->all();
+       $input->cover_image = $fileNameToStore;
+
+       $input = Workstate::create($input);
+      
+
+       return redirect(student/documenten)->with('success', '');
+        
     }
 
     /**

@@ -38,7 +38,7 @@ Route::controller(SettingsController::class)->prefix('instellingen')->group(func
 Route::controller(StudentController::class)->prefix('student')->group(function () {
     Route::get('/zoek-stage', 'search_internship')->name('search.internship');
     Route::get('/documenten', 'documents')->name('student.documents');
-    Route::post('File-upload', [StudentController::class, 'dropzoneFileUpload'])->name('dropzoneFileUpload');
+    Route::post('file-upload', 'dropzone')->name('dropzone');
 });
 
 Route::resource('student', StudentController::class);
