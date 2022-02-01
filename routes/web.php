@@ -40,8 +40,7 @@ Route::controller(StudentController::class)->prefix('student')->group(function (
     Route::get('/documenten', 'documents')->name('student.documents');
 
     Route::get('/klassen/{id}', 'grades_show')->name('student.grades.show');
-    Route::post('File-upload', [StudentController::class, 'dropzoneFileUpload'])->name('dropzoneFileUpload');
-
+    Route::post('file-upload', 'dropzone')->name('dropzone');
 });
 
 Route::resource('student', StudentController::class);
