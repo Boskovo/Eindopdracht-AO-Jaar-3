@@ -119,7 +119,7 @@
                         <div class="btnwrap">
                             <div class="contactbutton text-center">
                                 <div class="vacbtntext">
-                                    <a href="">Contact</a>
+                                    <a href="mailto:{{ $vacancie->company->email }}">Contact</a>
                                 </div>
                             </div>
                         </div>

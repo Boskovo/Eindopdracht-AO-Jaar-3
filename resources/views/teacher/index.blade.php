@@ -7,7 +7,7 @@
             <div class="profile-dashboard d-flex justify-content-center text-center p-3">
                 <div class="profile-holder">
                     <div class="profile-img-wrapper mb-2">
-                        <img class="profile-img" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.libelle.nl%2Factueel%2Fzo-ziet-het-lieve-baby-tje-uit-de-teletubbies-er-nu-uit~b0ce3d9c%2F&psig=AOvVaw16WPNrTOs1X6cG465RNfNc&ust=1643450875299000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPjH1eOZ1PUCFQAAAAAdAAAAABAg" alt="profilepic         ">
+                        <img class="profile-img" src="https://i.pinimg.com/originals/46/72/f8/4672f876389036583190d93a71aa6cb2.jpg" alt="profilepic         ">
                     </div>
                     <div class="profile-info text-start">
                         <ul class="profile-info-list">
