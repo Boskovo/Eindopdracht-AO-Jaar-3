@@ -116,7 +116,7 @@ class CompanyController extends Controller
     {
         $vacancie = Vacancie::find($id);
 
-        return view('company.vacancies.index', compact('vacancie'));
+        return view('company.vacancies.main', compact('vacancie'));
     }
     public function new_vacancy()
     {
@@ -124,6 +124,7 @@ class CompanyController extends Controller
     }
     protected function create_vacancy() 
     {
+
         $vacancie = new Vacancie();
         $vacancie->body = request('body');
         $vacancie->title = request('title');
@@ -141,5 +142,10 @@ class CompanyController extends Controller
         $vacancie->save();
 
         return redirect()->back()->with('success', 'Vacature is aangemaakt.');
+    }
+
+    public function search_vacancie() 
+    {
+        return view('company.vacancies.index');
     }
 }

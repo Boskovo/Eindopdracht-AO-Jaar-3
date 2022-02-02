@@ -93,7 +93,7 @@
                                                 <div class="pb-2 px-3">
                                                     <h4>
                                                         {{ $vacancie->title }}
-                                                    </h4> <!--{{ Auth::user()->company->vacancie }}-->
+                                                    </h4>
                                                 </div>
                                                 <div class="col">
                                                     <ul>

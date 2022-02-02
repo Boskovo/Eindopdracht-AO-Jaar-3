@@ -40,7 +40,6 @@ Route::controller(SettingsController::class)->prefix('instellingen')->group(func
 });
 
 Route::controller(StudentController::class)->prefix('student')->group(function () {
-    Route::get('/zoek-stage', 'search_internship')->name('search.internship'); //misschien weghalen / samenvoegen met de zoekfunctie van rick?
     Route::get('/documenten', 'documents')->name('student.documents');
     Route::get('/klassen', 'grades_index')->name('student.grades.index');
     Route::get('/klassen/{id}', 'grades_show')->name('student.grades.show');
@@ -71,6 +70,7 @@ Route::controller(TeacherController::class)->prefix('docenten')->group(function 
 Route::controller(CompanyController::class)->prefix('bedrijven')->group(function () {
     //Route::get('/vacatures', 'vacancies')->name('company.vacancies');
     Route::get('/vacatures/new', 'new_vacancy')->name('company.new_vacancy');
+    Route::get('/vacatures', 'search_vacancie')->name('company.search_vacancie');
     Route::get('/vacatures/{id}', 'vacancies')->name('company.vacancies');
     Route::post('/vacatures/aanmaken', 'create_vacancy')->name('company.create.vacancie');
 });

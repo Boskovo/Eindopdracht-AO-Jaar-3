@@ -19,10 +19,6 @@
                             <input id="title" class="form-control" type="text" name="title" required>
                         </div>
                         <div class="my-4">
-                            <label for="logo" class="form-label">Logo</label>
-                            <input type="file" class="form-control" id="logo">
-                        </div>
-                        <div class="my-4">
                             <label for="body" class="form-label">Korte Omschrijving</label>
                             <input id="body" class="form-control" type="text" name="body">
                         </div>
