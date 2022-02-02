@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\Grade;
 use App\Models\User;
+use App\Models\Vacancie;
+use App\Models\Workstate;
 use Illuminate\Http\Request;
 use App\Models\Fine;
 use App\Models\Team;
@@ -25,8 +27,9 @@ public function dashboard(){
         $roles = Role::all()->take(5);
         $companies = Company::all()->take(5);
         $grades = Grade::all()->take(5);
+        $workstates = Workstate::all()->take(5);
 
-        return view('auth.admin.index', compact('users', 'roles', 'companies', 'grades'));
+        return view('auth.admin.index', compact('users', 'roles', 'companies', 'grades', 'workstates'));
     }
     if(auth()->user()->hasAnyRole('Docent', 'docent')) {
         $companies = Company::all()->take(5);
@@ -44,10 +47,8 @@ public function dashboard(){
 
 public function search(Request $request)
 {
-    // Get the search value from the request
     $search = $request->input('search');
 
-    // Search in the title and body columns from the posts table
     $users = User::query()
         ->where('firstname', 'LIKE', "%{$search}%")
         ->orWhere('lastname', 'LIKE', "%{$search}%")
@@ -58,8 +59,22 @@ public function search(Request $request)
         ->where('name', 'LIKE', "%{$search}%")
         ->get();
 
-    // Return the search view with the resluts compacted
-    return view('search.result', compact('users', 'grades'));
+    $vacancies = Vacancie::query()
+        ->where('title', 'LIKE', "%{$search}%")
+        ->orWhere('body', 'LIKE', "%{$search}%")
+        ->orWhere('course', 'LIKE', "%{$search}%")
+        ->orWhere('location', 'LIKE', "%{$search}%")
+        ->get();
+
+    $companies = Company::query()
+        ->where('name', 'LIKE', "%{$search}%")
+        ->orWhere('email', 'LIKE', "%{$search}%")
+        ->orWhere('address_city', 'LIKE', "%{$search}%")
+        ->orWhere('phone', 'LIKE', "%{$search}%")
+        ->orWhere('website', 'LIKE', "%{$search}%")
+        ->get();
+
+    return view('search.result', compact('users', 'grades', 'companies', 'vacancies'));
 }
 
 }

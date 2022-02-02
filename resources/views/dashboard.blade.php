@@ -347,6 +347,20 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h5>Bestanden:</h5>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <a href="">toon meer</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

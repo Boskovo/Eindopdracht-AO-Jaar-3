@@ -20,6 +20,7 @@ class CompanyController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +28,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::all();
+        $companies = Company::orderBy('name')->get();;
 
         return view('company.index', compact('companies'));
     }
@@ -39,32 +40,52 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        $users = User::all();
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            $users = User::all();;
 
-        return view('company.create', compact('users'));
+            return view('company.create', compact('users'));
+        }
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return RedirectResponse
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'website' => 'required',
-        ]);
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            $this->validate($request, [
+                'name' => 'required',
+                'email' => 'required|email',
+                'phone' => 'required',
+                'website' => 'required',
+            ]);
 
-        $input = $request->all();
+            $company = new Company();
 
-        $company = Company::create($input);
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path("images/companies/$company->name/"), $imageName);
 
-        return redirect()->route('bedrijven.index')
-            ->with('success','Bedrijf aangemaakt.');
+            $company->name = request('name');
+            $company->email = request('email');
+            $company->phone = request('phone');
+            $company->vat_number = request('vat_number');
+            $company->website = request('website');
+            $company->user_id = request('user_id');
+            $company->address_city = request('address_city');
+            $company->address_zipcode = request('address_zipcode');
+            $company->address_street = request('address_street');
+            $company->address_street_number = request('address_street_number');
+            $company->logo = $imageName;
+
+            $company->save();
+
+            return redirect()->route('bedrijven.index')
+                ->with('success', 'Bedrijf aangemaakt.');
+        }
+
     }
 
     /**
@@ -82,26 +103,30 @@ class CompanyController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param Company $company
-     * @return Response
-     */
-    public function edit(Company $company)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @param Company $company
-     * @return Response
+     * @return RedirectResponse
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request, $id)
     {
-        //
+
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            Company::where('id', $id)->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'vat_number' => $request->name,
+                'website' => $request->website,
+                'address_street' => $request->address_street,
+                'address_street_number' => $request->address_street_number,
+                'address_zipcode' => $request->address_zipcode,
+                'address_city' => $request->address_city,
+            ]);
+
+            return redirect()->back()->with('success', 'Bedrijf is bewerkt.');
+        }
     }
 
     /**
@@ -112,9 +137,11 @@ class CompanyController extends Controller
      */
     public function destroy($id): RedirectResponse
     {
-        Company::find($id)->delete();
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            Company::find($id)->delete();
 
-        return redirect()->back()->with('success', 'Bedrijf is verwijderd.');
+            return redirect()->route('bedrijven.index');
+        }
     }
 
     public function vacancy_show($id)
@@ -123,31 +150,37 @@ class CompanyController extends Controller
 
         return view('company.vacancies.main', compact('vacancy'));
     }
+
     public function vacancy_create()
     {
-        return view('company.vacancies.createvacancy');
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            return view('company.vacancies.createvacancy');
+        }
     }
+
     protected function vacancy_store()
     {
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            $vacancy = new Vacancie();
 
-        $vacancy = new Vacancie();
-        $vacancy->body = request('body');
-        $vacancy->title = request('title');
-        $vacancy->course = request('course');
-        $vacancy->variant = request('variant');
-        $vacancy->level = request('level');
-        $vacancy->location = request('location');
-        $vacancy->start_date = request('start_date');
-        $vacancy->end_date = request('end_date');
-        $vacancy->learn = request('learn');
-        $vacancy->demands = request('demands');
-        $vacancy->offer = request('offer');
-        $vacancy->company_id = Auth::id();
-        $vacancy->is_active = 1;
+            $vacancy->body = request('body');
+            $vacancy->title = request('title');
+            $vacancy->course = request('course');
+            $vacancy->variant = request('variant');
+            $vacancy->level = request('level');
+            $vacancy->location = request('location');
+            $vacancy->start_date = request('start_date');
+            $vacancy->end_date = request('end_date');
+            $vacancy->learn = request('learn');
+            $vacancy->demands = request('demands');
+            $vacancy->offer = request('offer');
+            $vacancy->company_id = Auth::id();
+            $vacancy->is_active = 1;
 
-        $vacancy->save();
+            $vacancy->save();
 
-        return redirect()->back()->with('success', 'Vacature is aangemaakt.');
+            return redirect()->back()->with('success', 'Vacature is aangemaakt.');
+        }
     }
 
     public function vacancy_index()

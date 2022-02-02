@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
@@ -175,6 +175,43 @@
                                         @endforeach
                                         </tbody>
                                     </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <h5>Bestanden:</h5>
+                            </div>
+                            <div class="col-6 text-end">
+                                <a href="">toon meer</a>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">First</th>
+                                                <th scope="col">Last</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($workstates as $workstate)
+                                            <tr>
+                                                <th scope="row">{{ $workstate->id }}</th>
+                                                <td>{{ $workstate->title }}</td>
+                                                <td>{{ $workstate->created_at }}</td>
+                                            </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                </div>
                             </div>
                         </div>
                     </div>

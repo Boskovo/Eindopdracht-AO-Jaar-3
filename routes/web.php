@@ -10,7 +10,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\RoleController;
 
 //------------------------------------------------------------------------------------------
 
@@ -48,7 +47,7 @@ Route::controller(StudentController::class)->prefix('student')->group(function (
     Route::get('/klassen/{id}/destroy', 'grades_destroy')->name('student.grades.destroy');
     Route::put('/klassen/{id}/lid/store', 'grades_member_store')->name('student.grades.member.store');
     Route::get('/klassen/{id}/lid/destroy', 'grades_member_destroy')->name('student.grades.member.destroy');
-    Route::post('file-upload', 'dropzone')->name('dropzone');
+    Route::post('/file-upload', 'dropzone')->name('dropzone');
 });
 
 Route::resource('student', StudentController::class);
@@ -70,13 +69,13 @@ Route::controller(TeacherController::class)->prefix('docenten')->group(function 
     Route::get('/klassen','classes')->name('teacher.classes');
 });
 
-//Route::resource('docenten', TeacherController::class);
-
 Route::controller(CompanyController::class)->prefix('bedrijven')->group(function () {
     Route::get('/vacatures', 'vacancy_index')->name('vacancies.index');
     Route::get('/vacatures/aanmaken', 'vacancy_create')->name('company.create.vacancy');
     Route::post('/vacatures/aanmaken/opslaan', 'vacancy_store')->name('company.store.vacancy');
     Route::get('/vacature/{id}', 'vacancy_show')->name('company.vacancy.show');
+    Route::put('/{id}/update', 'update')->name('company.update');
+    Route::get('/{id}/destroy', 'destroy')->name('bedrijven.destroy');
 });
 
-Route::resource('bedrijven', CompanyController::class);
+Route::resource('bedrijven', CompanyController::class)->except('destroy', 'update');

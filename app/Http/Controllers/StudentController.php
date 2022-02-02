@@ -8,7 +8,13 @@ use App\Models\Student;
 use App\Models\User;
 use App\Models\Grade;
 use App\Models\Grade_Member;
+use App\Models\Workstate;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -16,10 +22,11 @@ class StudentController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return Application|Factory|View
      */
     public function index()
     {
@@ -38,53 +45,21 @@ class StudentController extends Controller
         return view('student.documents');
     }
 
-    public function dropzone (Request $request){
-        dd();
-        // $image = $request->file('file');
-
-
-        // return response()->json(['success'=>$imageName]);
-       $this->validate($request,[
-          'cover_image' => 'image|nullable|max:1999'
-       ]);
-       //handle file upload
-
-       if($request->hasFile('cover_image')){
-            $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
-            // get just file name
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // get just extension
-            $extension = $request->file('cover_image')->getClientOriginalExtension();
-            // filename store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            //upload image
-            $path = $request->file('cover_image')->storeAs('public/cover_image' , $fileNameToStore);
-       }else {
-           $fileNameToStore = 'noimage.jpg';
-       }
-
-       $input = $request->all();
-       $input->cover_image = $fileNameToStore;
-
-       $input = Workstate::create($input);
-
-
-       return redirect(student/documenten)->with('success', '');
-
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\Student $student
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Student $student)
+    public function dropzone(Request $request)
     {
-        //
+        $workstate = new Workstate();
+
+        $fileName = time() . '.' . $request->file->extension();
+        $request->file->move(public_path("/files/workstates"), $fileName);
+
+        $workstate->title = $fileName;
+        $workstate->user_id = Auth::user()->id;
+
+        $workstate->save();
+
+        return redirect()->back();
+
     }
-
-
 
     public function grades_index()
     {
@@ -95,22 +70,25 @@ class StudentController extends Controller
 
     public function grades_store()
     {
-        $grade = new Grade();
-        $grade->name = request('name');
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            $grade = new Grade();
+            $grade->name = request('name');
 
-        $grade->save();
+            $grade->save();
 
-        return redirect()->back()->with('success', 'Klas is aangemaakt.');
+            return redirect()->back()->with('success', 'Klas is aangemaakt.');
+        }
     }
 
     public function grades_update($id, Request $request): \Illuminate\Http\RedirectResponse
     {
-//        Grade::where('id', $id)->update($request->all());
-        Grade::where('id', $id)->update([
-            'name' => $request->name,
-        ]);
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            Grade::where('id', $id)->update([
+                'name' => $request->name,
+            ]);
 
-        return redirect()->back()->with('success', 'Klas is aangemaakt.');
+            return redirect()->back()->with('success', 'Klas is aangemaakt.');
+        }
     }
 
     public function grades_show($id)
@@ -123,27 +101,33 @@ class StudentController extends Controller
 
     public function grades_destroy($id)
     {
-        Grade::find($id)->delete();
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            Grade::find($id)->delete();
 
-        return redirect()->back()->with('success', 'Klas is verwijderd.');
+            return redirect()->back()->with('success', 'Klas is verwijderd.');
+        }
     }
 
     public function grades_member_store($id, Request $request)
     {
-        $grade_member = new Member();
-        $grade_member->user_id = request('user_id');
-        $grade_member->grade_id = $id;
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            $grade_member = new Member();
+            $grade_member->user_id = request('user_id');
+            $grade_member->grade_id = $id;
 
-        $grade_member->save();
+            $grade_member->save();
 
-        return redirect()->back()->with('success', 'Lid is toegevoegd.');
+            return redirect()->back()->with('success', 'Lid is toegevoegd.');
+        }
     }
 
     public function grades_member_destroy(Request $request, $id): \Illuminate\Http\RedirectResponse
     {
-        Member::find($id)->delete();
+        if (auth()->user()->hasAnyRole('Admin', 'admin')) {
+            Member::find($id)->delete();
 
-        return redirect()->back()->with('success', 'Lid is verwijderd.');
+            return redirect()->back()->with('success', 'Lid is verwijderd.');
+        }
     }
 
 

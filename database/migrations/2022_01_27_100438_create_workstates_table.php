@@ -15,12 +15,8 @@ class CreateWorkstatesTable extends Migration
     {
         Schema::create('workstates', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->string('title');
-            $table->text('body');
-            $table->string('cover_image');
-            //$table->integer('approval_id');
-            $table->foreignId('approval_id');
+            $table->bigInteger('user_id');
+            $table->longText('title');
             $table->timestamps();
         });
     }

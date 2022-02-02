@@ -28,8 +28,9 @@ class AdminController extends Controller
             $roles = Role::all()->take(5);
             $companies = Company::all()->take(5);
             $grades = Grade::all()->take(5);
+            $workstates = Workstate::all()->take(5);
 
-            return view('auth.admin.index', compact('users', 'roles', 'companies', 'grades'));
+            return view('auth.admin.index', compact('users', 'roles', 'companies', 'grades', 'workstates'));
         }
         if(auth()->user()->hasAnyRole('Docent', 'docent')) {
             $companies = Company::all()->take(5);
@@ -46,69 +47,4 @@ class AdminController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

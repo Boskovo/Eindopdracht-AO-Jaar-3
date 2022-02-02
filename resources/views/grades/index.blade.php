@@ -5,24 +5,29 @@
 
     <div class="main py-4">
         <div class="row">
+            @if(auth()->user()->hasAnyRole('admin', 'Admin'))
             <div class="col-12 text-end mb-4">
                 <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus"></i> klas
                     aanmaken</a>
             </div>
+            @endif
             @foreach($grades as $grade)
                 <div class="col-3">
                     <a href="{{ route('student.grades.show', $grade->id) }}">
                         <div class="card mb-4">
                             <div class="card-body">
-                                    <h5>{{ $grade->name }}</h5>
-                                    <hr>
-                                    <p><b>Aantal studenten:</b> {{ $grade->members->count() }}</p>
+                                <h5>{{ $grade->name }}</h5>
+                                <hr>
+                                <p><b>Aantal studenten:</b> {{ $grade->members->count() }}</p>
                                 <div class="text-center">
-                                    <hr>
-                                <a href="{{ route('student.grades.destroy', $grade->id) }}" class="card-link text-danger"><i
-                                        class="fas fa-trash-alt"></i></a>
+                                    @if(auth()->user()->hasAnyRole('Admin', 'admin'))
+                                        <hr>
+                                        <a href="{{ route('student.grades.destroy', $grade->id) }}"
+                                           class="card-link text-danger"><i
+                                                class="fas fa-trash-alt"></i></a>
+                                    @endif
                                 </div>
-                                </div>
+                            </div>
                         </div>
                     </a>
                 </div>

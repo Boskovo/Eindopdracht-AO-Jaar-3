@@ -56,17 +56,6 @@
         </a>
     </li>
 
-    @hasanyrole('Admin')
-    <li class="nav-item {{ request()->routeIs('admin') ? 'active' : '' }}">
-        <a href="{{ route('admin') }}" class="nav-link">
-            <span class="sidebar-icon me-3">
-               <i class="fas fa-users-cog"></i>
-            </span>
-            <span class="sidebar-text">{{ __('Admin Dashboard') }}</span>
-        </a>
-    </li>
-    @endhasanyrole
-
     <li class="nav-item {{ request()->routeIs('settings') ? 'active' : '' }}">
         <a href="{{ route('settings') }}" class="nav-link">
             <span class="sidebar-icon me-3">

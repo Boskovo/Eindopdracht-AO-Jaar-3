@@ -14,7 +14,7 @@
                     </div>
                     <hr>
                     <div class="col-12">
-                        {!! Form::open(array('route' => 'bedrijven.store','method'=>'POST')) !!}
+                        {!! Form::open(array('route' => 'bedrijven.store','method'=>'POST', 'enctype' => 'multipart/form-data')) !!}
                         @csrf
                         <div class="row">
 
@@ -27,7 +27,6 @@
                                     <input id="name" class="form-control" type="text" name="name"
                                            placeholder="{{ __('Naam') }}"
                                            required>
-                                    {{--                                    {!! Form::text('name', null, array('placeholder' => 'Bedrijfsnaam','class' => 'form-control', 'required')) !!}--}}
                                 </div>
                                 @error('name')
                                 <div class="invalid-feedback"> {{ $message }} </div> @enderror
@@ -42,7 +41,6 @@
                                     <input id="name" class="form-control" type="email" name="email"
                                            placeholder="{{ __('Email') }}"
                                            required>
-                                    {{--                                    {!! Form::email('email', null, array('placeholder' => 'Email','class' => 'form-control', 'required')) !!}--}}
                                 </div>
                                 @error('email')
                                 <div class="invalid-feedback"> {{ $message }} </div> @enderror
@@ -57,7 +55,6 @@
                                     <input id="phone" class="form-control" type="text" name="phone"
                                            placeholder="{{ __('Telefoon') }}"
                                            required>
-                                    {{--                                    {!! Form::text('phone', null, array('placeholder' => 'Telefoon','class' => 'form-control', 'required')) !!}--}}
                                 </div>
                                 @error('phone')
                                 <div class="invalid-feedback"> {{ $message }} </div> @enderror
@@ -71,7 +68,6 @@
                                     </span>
                                     <input id="vat_number" class="form-control" type="text" name="vat_number"
                                            placeholder="{{ __('BTW-Nummer') }}">
-                                    {{--                                    {!! Form::text('vat_number', null, array('placeholder' => 'BTW-Nummer','class' => 'form-control', 'required')) !!}--}}
                                 </div>
                                 @error('vat_number')
                                 <div class="invalid-feedback"> {{ $message }} </div> @enderror
@@ -86,14 +82,13 @@
                                     <input id="website" class="form-control" type="url" name="website"
                                            placeholder="{{ __('Website') }}"
                                            required>
-                                    {{--                                    {!! Form::url('website', null, array('placeholder' => 'Website','class' => 'form-control', 'required')) !!}--}}
                                 </div>
                                 @error('website')
                                 <div class="invalid-feedback"> {{ $message }} </div> @enderror
                             </div>
 
                             <div class="col-md-6 mb-3">
-                                <label for="user_id">{{ 'Welke link' }}</label>
+                                <label for="user_id">{{ 'Welke gebruiker' }}</label>
                                 <div class="input-group">
                                     <span class="input-group-text">
                                         <i class="fas fa-users"></i>
@@ -101,14 +96,85 @@
                                     <select id="user_id" name="user_id" class="form-control">
                                         <option value="">--- Selecteer een gebruiker ---</option>
                                         @foreach($users as $user)
-                                        <option value='{{ $user->id }}'>{{ $user->firstname }} {{ $user->lastname }}, {{ $user->email }}</option>
+                                            <option value='{{ $user->id }}'>{{ $user->firstname }} {{ $user->lastname }}
+                                                , {{ $user->email }}</option>
                                         @endforeach
                                     </select>
-                                    {{--                                    {!! Form::select('user_id', $users,[], array('class' => 'form-control', 'value' => $users->id)) !!}--}}
                                 </div>
                                 @error('user_id')
                                 <div class="invalid-feedback"> {{ $message }} </div> @enderror
                             </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="logo">{{ 'Logo:' }}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-images"></i>
+                                    </span>
+                                    <input id="logo" class="form-control" type="file" name="image"
+                                           placeholder="{{ __('Logo') }}"
+                                           required>
+                                </div>
+                                @error('logo')
+                                <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                            </div>
+                            <hr>
+                            <div class="col-md-6 mb-3">
+                                <label for="address_street">{{ 'Straat:' }}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-location-arrow"></i>
+                                    </span>
+                                    <input id="address_street" class="form-control" type="text" name="address_street"
+                                           placeholder="{{ __('Straat') }}">
+                                </div>
+                                @error('address_street')
+                                <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="address_street_number">{{ 'Nummer:' }}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-sort-numeric-up-alt"></i>
+                                    </span>
+                                    <input id="address_street_number" class="form-control" type="text" name="address_street_number"
+                                           placeholder="{{ __('Nummer') }}">
+                                </div>
+                                @error('address_street_number')
+                                <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="address_zipcode">{{ 'Postcode:' }}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-globe-europe"></i>
+                                    </span>
+                                    <input id="address_zipcode" class="form-control" type="text" name="address_zipcode"
+                                           placeholder="{{ __('Postcode') }}">
+                                </div>
+                                @error('address_zipcode')
+                                <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="address_city">{{ 'Plaats:' }}</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-city"></i>
+                                    </span>
+                                    <input id="address_city" class="form-control" type="text" name="address_city"
+                                           placeholder="{{ __('Plaats') }}">
+                                </div>
+                                @error('address_city')
+                                <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                            </div>
+
+
+
+
+
 
 
                             <div class="col-xs-12 col-sm-12 col-md-12 text-start">

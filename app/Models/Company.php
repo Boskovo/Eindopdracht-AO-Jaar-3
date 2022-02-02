@@ -19,6 +19,11 @@ class Company extends Model
         'email',
         'vat_number',
         'user_id',
+        'logo',
+        'address_city',
+        'address_zipcode',
+        'address_street',
+        'address_street_number',
     ];
 
     public function vacancie()
