@@ -32,7 +32,7 @@ Route::controller(SettingsController::class)->prefix('instellingen')->group(func
     Route::post('/link/create', 'create_link')->name('settings.create.link');
     Route::get('/link/{id}/edit', 'edit_link')->name('settings.edit.link');
     Route::put('/link/{id}/update', 'update_link')->name('settings.update.link');
-    Route::get('/link/{id}/delete', 'destroy_link')->name('settings.destroy.link');
+    Route::get('/link/{id}/destroy', 'destroy_link')->name('settings.destroy.link');
     Route::post('/address/create', 'create_address')->name('settings.create.address');
     Route::get('/address/{id)/edit', 'edit_address')->name('settings.edit.address');
     Route::put('/address/{id}/update', 'update_address')->name('settings.update.address');
@@ -42,7 +42,12 @@ Route::controller(SettingsController::class)->prefix('instellingen')->group(func
 Route::controller(StudentController::class)->prefix('student')->group(function () {
     Route::get('/documenten', 'documents')->name('student.documents');
     Route::get('/klassen', 'grades_index')->name('student.grades.index');
+    Route::post('/klassen/store', 'grades_store')->name('student.grades.store');
     Route::get('/klassen/{id}', 'grades_show')->name('student.grades.show');
+    Route::put('/klassen/{id}/update', 'grades_update')->name('student.grades.update');
+    Route::get('/klassen/{id}/destroy', 'grades_destroy')->name('student.grades.destroy');
+    Route::put('/klassen/{id}/lid/store', 'grades_member_store')->name('student.grades.member.store');
+    Route::get('/klassen/{id}/lid/destroy', 'grades_member_destroy')->name('student.grades.member.destroy');
     Route::post('file-upload', 'dropzone')->name('dropzone');
 });
 
@@ -68,11 +73,10 @@ Route::controller(TeacherController::class)->prefix('docenten')->group(function 
 //Route::resource('docenten', TeacherController::class);
 
 Route::controller(CompanyController::class)->prefix('bedrijven')->group(function () {
-    //Route::get('/vacatures', 'vacancies')->name('company.vacancies');
-    Route::get('/vacatures/new', 'new_vacancy')->name('company.new_vacancy');
-    Route::get('/vacatures', 'search_vacancie')->name('company.search_vacancie');
-    Route::get('/vacatures/{id}', 'vacancies')->name('company.vacancies');
-    Route::post('/vacatures/aanmaken', 'create_vacancy')->name('company.create.vacancie');
+    Route::get('/vacatures', 'vacancy_index')->name('vacancies.index');
+    Route::get('/vacatures/aanmaken', 'vacancy_create')->name('company.create.vacancy');
+    Route::post('/vacatures/aanmaken/opslaan', 'vacancy_store')->name('company.store.vacancy');
+    Route::get('/vacature/{id}', 'vacancy_show')->name('company.vacancy.show');
 });
 
 Route::resource('bedrijven', CompanyController::class);

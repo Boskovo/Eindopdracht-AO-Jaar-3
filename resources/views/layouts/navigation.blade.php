@@ -20,12 +20,12 @@
         </a>
     </li>
 
-    <li class="nav-item {{ request()->routeIs('docenten.index') ? 'active' : '' }}">
-        <a  class="nav-link">
+    <li class="nav-item {{ request()->routeIs('vacancies.index') ? 'active' : '' }}">
+        <a href="{{ route('vacancies.index') }}" class="nav-link">
             <span class="sidebar-icon me-3">
-               <i class="fas fa-chalkboard-teacher"></i>
+              <i class="fab fa-buffer"></i>
             </span>
-            <span class="sidebar-text">{{ __('Docenten') }}</span>
+            <span class="sidebar-text">{{ __('Vacatures') }}</span>
         </a>
     </li>
 
@@ -34,7 +34,16 @@
             <span class="sidebar-icon me-3">
                <i class="fas fa-user-graduate"></i>
             </span>
-            <span class="sidebar-text">{{ __('Student') }}</span>
+            <span class="sidebar-text">{{ __('Studenten') }}</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ request()->routeIs('student.grades.index') ? 'active' : '' }}">
+        <a href="{{ route('student.grades.index') }}" class="nav-link">
+            <span class="sidebar-icon me-3">
+               <i class="fas fa-school"></i>
+            </span>
+            <span class="sidebar-text">{{ __('Klassen') }}</span>
         </a>
     </li>
 

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Admin Dashboard')
+@section('title', 'Bedrijf aanmaken')
 
 @section('content')
 
@@ -98,7 +98,7 @@
                                     <span class="input-group-text">
                                         <i class="fas fa-users"></i>
                                     </span>
-                                    <select id="link-title" name="title" class="form-control">
+                                    <select id="user_id" name="user_id" class="form-control">
                                         <option value="">--- Selecteer een gebruiker ---</option>
                                         @foreach($users as $user)
                                         <option value='{{ $user->id }}'>{{ $user->firstname }} {{ $user->lastname }}, {{ $user->email }}</option>

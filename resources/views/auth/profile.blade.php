@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-md-10 mb-3">
                         <h3>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</h3>
-                        <h6 class="card-subtitle mb-2 text-muted">139970</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ Auth::user()->id }}</h6>
                     </div>
                     <div class="col-md-2 text-end mb-3">
                         <a href="{{ route('settings') }}">profiel bewerken</a>
@@ -65,8 +65,8 @@
                             </div>
                             <div class="col-md-12">
                                 <p>
-                                    <b>Klas:</b> <a href="">als gebruiker student dan show dit en geef klas weer</a><br>
-                                    @if(auth()->user()->hasRole('admin'))
+                                    <b>Klas:</b> <a href="">{{ Auth::user()->member->grade->name }}</a><br>
+                                    @if(auth()->user()->hasAnyRole('admin', 'Admin'))
                                         <b>Soort account:</b> {{ auth()->user()->roles->first()->name }}<br>
                                     @endif
                                 </p>
@@ -77,14 +77,16 @@
             </div>
         </div>
         <!--Vacaturescard-->
-        <div class="card">
-            <div class="card-body">
-                        <div class="col-md-10 mb-3">
-                            <h3>Vacatures</h3>
-                        </div>
-                        <hr>
-                        <div class="row">
-                        @foreach (Auth::user()->company->vacancie as $vacancie)
+        @if(auth()->user()->hasAnyRole('bedrijf', 'Bedrijf'))
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-md-10 mb-3">
+                        <h3>Vacatures</h3>
+                    </div>
+                    <hr>
+                    <div class="row">
+
+                        @foreach (Auth::user()->company->vacancie as $vacancy)
                             <div class="col-4">
                                 <div class="card m-1">
                                     <div class="card-body">
@@ -92,25 +94,26 @@
                                             <div class="col-lg">
                                                 <div class="pb-2 px-3">
                                                     <h4>
-                                                        {{ $vacancie->title }}
+                                                        {{ $vacancy->title }}
                                                     </h4>
                                                 </div>
                                                 <div class="col">
                                                     <ul>
                                                         <li>
-                                                            {{ $vacancie->course }}
+                                                            {{ $vacancy->course }}
                                                         </li>
                                                         <li>
-                                                            {{ $vacancie->variant }}
+                                                            {{ $vacancy->variant }}
                                                         </li>
                                                         <li>
-                                                            {{ $vacancie->level }}
+                                                            {{ $vacancy->level }}
                                                         </li>
                                                     </ul>
                                                     <div class="btnwrap">
                                                         <div class="vacaturebutton text-center mb-2 mx-2">
                                                             <div class="vacbtntext">
-                                                                <a href="/bedrijven/vacatures/{{ $vacancie->id }}">Bekijk Vacature</a>
+                                                                <a href="{{ route('company.vacancy.show') }}">Bekijk
+                                                                    Vacature</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -120,8 +123,12 @@
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
-                        </div>
+                        @endforeach
+
                     </div>
                 </div>
+            </div>
+    @else
+
+    @endif
 @endsection

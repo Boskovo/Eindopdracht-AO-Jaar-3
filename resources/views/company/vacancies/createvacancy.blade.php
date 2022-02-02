@@ -10,7 +10,7 @@
                     <div class="p-2">
                         <h1>Nieuwe Vacature aanmaken</h1>
                     </div>
-                    <form action="{{ route('company.create.vacancie') }}" method="POST" >
+                    <form action="{{ route('company.store.vacancy') }}" method="POST" >
                         @csrf
                         @method('POST')
 
@@ -42,11 +42,11 @@
                             <div class="row">
                                 <div class="col-md my-2">
                                     <label for="start_date">Startdatum</label>
-                                    <input type="text" class="form-control" id="start_date" name="start_date">
+                                    <input type="date" class="form-control" id="start_date" name="start_date">
                                 </div>
                                 <div class="col-md my-2">
                                     <label for="end_date" class="text-muted">Einddatum</label>
-                                    <input type="text" class="form-control" id="end_date" name="end_date">
+                                    <input type="date" class="form-control" id="end_date" name="end_date">
                                 </div>
                             </div>
                         </div>

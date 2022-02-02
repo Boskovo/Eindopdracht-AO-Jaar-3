@@ -45,18 +45,13 @@ class StudentController extends Controller
 
         // return response()->json(['success'=>$imageName]);
        $this->validate($request,[
-          'cover_image' => 'image|nullable|max:1999' 
+          'cover_image' => 'image|nullable|max:1999'
        ]);
-
-       
-
-      
-
        //handle file upload
 
        if($request->hasFile('cover_image')){
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
-            // get just file name 
+            // get just file name
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             // get just extension
             $extension = $request->file('cover_image')->getClientOriginalExtension();
@@ -67,36 +62,15 @@ class StudentController extends Controller
        }else {
            $fileNameToStore = 'noimage.jpg';
        }
-       
+
        $input = $request->all();
        $input->cover_image = $fileNameToStore;
 
        $input = Workstate::create($input);
-      
+
 
        return redirect(student/documenten)->with('success', '');
-        
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -110,45 +84,67 @@ class StudentController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\Models\Student $student
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Student $student)
+
+
+    public function grades_index()
     {
-        //
+        $grades = Grade::all();
+
+        return view('grades.index', compact('grades'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Student $student
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Student $student)
+    public function grades_store()
     {
-        //
+        $grade = new Grade();
+        $grade->name = request('name');
+
+        $grade->save();
+
+        return redirect()->back()->with('success', 'Klas is aangemaakt.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\Models\Student $student
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Student $student)
+    public function grades_update($id, Request $request): \Illuminate\Http\RedirectResponse
     {
-        //
+//        Grade::where('id', $id)->update($request->all());
+        Grade::where('id', $id)->update([
+            'name' => $request->name,
+        ]);
+
+        return redirect()->back()->with('success', 'Klas is aangemaakt.');
     }
 
     public function grades_show($id)
     {
         $grade = Grade::find($id);
-        $grade_members = Member::find("grade_id" == $id);
+        $users = User::all();
 
-        return view('grades.show', compact('grade', 'grade_members'));
+        return view('grades.show', compact('grade', 'users'));
     }
+
+    public function grades_destroy($id)
+    {
+        Grade::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Klas is verwijderd.');
+    }
+
+    public function grades_member_store($id, Request $request)
+    {
+        $grade_member = new Member();
+        $grade_member->user_id = request('user_id');
+        $grade_member->grade_id = $id;
+
+        $grade_member->save();
+
+        return redirect()->back()->with('success', 'Lid is toegevoegd.');
+    }
+
+    public function grades_member_destroy(Request $request, $id): \Illuminate\Http\RedirectResponse
+    {
+        Member::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Lid is verwijderd.');
+    }
+
+
 }

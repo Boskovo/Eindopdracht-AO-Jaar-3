@@ -9,9 +9,9 @@ class Grade extends Model
 {
     use HasFactory;
 
-    public function member()
+    public function members()
     {
-        return $this->hasMany(Member::class, 'grade_id', 'id');
+        return $this->hasMany(Member::class);
     }
 
 

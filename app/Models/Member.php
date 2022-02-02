@@ -11,12 +11,12 @@ class Member extends Model
 
     public function grade()
     {
-        return $this->belongsTo(Grade::class, 'grade_id');
+        return $this->belongsTo(Grade::class);
     }
 
     public function user()
     {
-        return $this->hasMany(User::class,'user_id','id');
+        return $this->belongsTo(User::class);
     }
 
 }

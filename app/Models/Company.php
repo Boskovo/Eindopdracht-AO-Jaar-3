@@ -33,7 +33,7 @@ class Company extends Model
 
     public function address()
     {
-        return $this->belongsTo(Address::class);
+        return $this->hasMany(Address::class);
     }
 
 }
